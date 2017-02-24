@@ -21,6 +21,10 @@ class CompostersController < ApplicationController
     end
   end
 
+  def edit
+    @composter = Composter.find(params[:id])
+  end
+
   private 
     def permit_composter
       params.require(:composter).permit(:name, :size)
