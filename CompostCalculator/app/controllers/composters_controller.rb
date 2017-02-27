@@ -4,10 +4,12 @@ class CompostersController < ApplicationController
   end
 
   def index
+    @composters = Composter.all
   end
 
   def show
-    @composter = Composter.find(params[:id])
+    /@composter = Composter.find(params[:id])/
+    @composter = current_user.composters.find(params[:id])
   end
 
   def create
@@ -22,7 +24,8 @@ class CompostersController < ApplicationController
   end
 
   def edit
-    @composter = Composter.find(params[:id])
+    /@composter = Composter.find(params[:id])/
+    @composter = current_user.composters.find(params[:id])
   end
 
   private 
