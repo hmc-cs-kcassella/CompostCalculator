@@ -26,6 +26,12 @@ class CompostersController < ApplicationController
     @composter = Composter.find(params[:id])
   end
 
+  def view
+    logger.warn "hoo"
+    logger.warn "ray"
+    @composter = Composter.find(params[:id])
+  end
+
   private 
     def permit_composter
       params.require(:composter).permit(:name, :size)
