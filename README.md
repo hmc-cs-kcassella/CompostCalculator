@@ -30,9 +30,10 @@ HTML web page that performs the basic functionality
 
 Architectural Model:
 
-![Architectural Model](blob/master/Architecture.png?raw=true)
+![Architectural Model](/Architecture.png?raw=true)
 
 Functionality:
+
 · Be able to log in and view your different “Compost Profiles”
 · View status of current composts
 · Input what food you add the the compost
@@ -42,15 +43,18 @@ Functionality:
 · Add or delete compost profiles
 
 For each profile:
+
 · View temp 
 · Add more items
 
 Background research:
+
 https://www.planetnatural.com/composting-101/making/c-n-ratio/
 http://compost.css.cornell.edu/physics.html
 
 Timeline:
 
 Potential problems:
+
 Composters/users might not give enough information to create a graph
 We don’t have the equation to calculate the ratios (waiting to get this from Zach)
