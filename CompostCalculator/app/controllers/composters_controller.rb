@@ -4,6 +4,7 @@ class CompostersController < ApplicationController
   end
 
   def index
+    @composters = Composter.all
   end
 
   def show
