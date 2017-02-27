@@ -8,11 +8,17 @@
 	<br>
 	Volume: <%= x.size %>
 	TODO: add edit and view
+	<br>
 	<button type="button">
     <%= link_to "Edit Composter", edit_composter_path(x.id) %>
+	</button>
+	<br>
+	<button type="button">
+	how to
 	</button>
 </div>
 <% end %>
 <%- if current_user %>
 <%= link_to "Add Composter", new_composter_path %>
+<br>
 <% end %>
