@@ -22,7 +22,8 @@ class CompostersController < ApplicationController
   end
 
   def edit
-    @composter = Composter.find(params[:id])
+    /@composter = Composter.find(params[:id])/
+    @composter = current_user.composters.find(params[:id])
   end
 
   private 
