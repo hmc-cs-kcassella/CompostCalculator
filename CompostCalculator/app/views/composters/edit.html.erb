@@ -78,7 +78,11 @@
       <button type="button" class="btn btn-primary" style="width: 100%"> Empty Composter</button>
       <br>
       <br>
-      <button type="button" class="btn btn-primary" style="width: 100%"> Delete Composter</button>
+      <button type="button" class="btn btn-primary" style="width: 100%"> Delete Composter
+        <li>
+          <%= link_to root_path, @composter.destroy %>
+        </li>
+      </button>
       <br>
       <br>
       <button type="button" class="btn btn-primary" style="width: 100%"> Save Changes</button>
