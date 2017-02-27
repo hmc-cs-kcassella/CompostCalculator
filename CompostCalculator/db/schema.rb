@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220044349) do
+ActiveRecord::Schema.define(version: 20170227052837) do
+
+  create_table "composters", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.decimal  "size"
+    t.float    "temperature"
+    t.float    "flipTime"
+    t.float    "cNRatio"
+    t.float    "moistureContent"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

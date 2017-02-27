@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+  <body style="background-image: url(/assets/environment.jpg); background-repeat: repeat-0; background-size: cover" >
+    <div class="row">
+      <div class="col-md-12" style="color: white; font-size: 400%; font-family: fantasy">
+        <br>
+        <b>
+          Edit Composter
+        </b>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6" name= "composterCol">
+      <div class="panel panel-default" style="background-color: #101010 "> 
+        <div class="panel-heading" style="background: #101010; color: gray; font-family: Helvetica, sans-serif" >Current Composter Information</div>
+          <div class="panel-body" style="text-align: left; color: gray; font: medium">
+            <div class="row">
+              <div class="col-md-7">
+                <%= "Name:" %>
+                <%= @composter.name %>
+                <br>
+                <%= "Composter Volume:" %>
+                <%= @composter.size %>
+                <br>
+                <%= "Current Temperature:" %>
+                <br>
+                <%= "Time until next flip:" %>
+                <br>
+                <%= "Carbon Nitrogen Ratio:" %>
+                <br>
+                <%= "Current Moisture Content:" %>
+                <br>
+              </div>
+              <div class="col-md-5">
+                <br>
+                <img src=/assets/logocropped.png style="vertical-align: middle">
+              </div>
+            </div>            
+          </div>
+        </div>     
+    </div>
+    <div class="col-md-6">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="addItems" data-toggle="dropdown" style="width: 100%">Add Item
+        <span class="caret"></span></button>   
+          <ul class="dropdown-menu" role="menu" aria-labelledby="addItems" style="width: 100%">
+             <li> 
+              <label>Type:</label>
+              <input type="text" class="form-control" id="usr">
+            </li>
+            <li> 
+              <label>Amount:</label>
+              <input type="text" class="form-control" id="usr">
+            </li>
+            <li> 
+              <button type="button" class="btn btn-primary" style="width: 100%"> Add </button>
+            </li>
+          </ul>
+      </div>
+      <br>
+      <div class="dropdown" style="width: 50">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="addItems" data-toggle="dropdown" style="width: 100%">Calculate Moisture Content
+        <span class="caret"></span></button>   
+          <ul class="dropdown-menu" role="menu" aria-labelledby="moistureContent" style="width: 100%">
+             <li> 
+              <label>Dry Weight (g): </label>
+              <input type="text" class="form-control" id="usr">
+            </li>
+            <li> 
+              <label>Wet Weight (g):</label>
+              <input type="text" class="form-control" id="usr">
+            </li>
+            <li> 
+              <button type="button" class="btn btn-primary" style="width: 100%"> Calculate </button>
+            </li>
+          </ul>
+      </div>
+      <br>
+      <button type="button" class="btn btn-primary" style="width: 100%"> Empty Composter</button>
+      <br>
+      <br>
+      <button type="button" class="btn btn-primary" style="width: 100%"> Delete Composter</button>
+      <br>
+      <br>
+      <button type="button" class="btn btn-primary" style="width: 100%"> Save Changes</button>
+    </div>
+  </div>
+  </body>
+  
