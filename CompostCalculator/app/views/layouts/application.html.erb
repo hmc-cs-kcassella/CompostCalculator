@@ -1,74 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CompostCalculator</title>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+	<title>CompostCalculator</title>
+	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
 	<!-- Navigation -->
-	    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	        <div class="container">
-	            <!-- Brand and toggle get grouped for better mobile display -->
-	            <div class="navbar-header">
-	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-	                    <span class="sr-only">Toggle navigation</span>
-	                    <span class="icon-bar"></span>
-	                    <span class="icon-bar"></span>
-	                    <span class="icon-bar"></span>
-	                </button>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<%- if current_user %>
+				<%= link_to "Compost Calculator", root_url, class: "navbar-brand" %>
+				<% else %>
+				<%= link_to "Compost Calculator", new_user_session_path, class: "navbar-brand" %>
+				<% end %>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="#">About</a>
+					</li>
 					<%- if current_user %>
-						<%= link_to "Compost Calculator", root_url, class: "navbar-brand" %>
+					<li>
+						<%= link_to "Logout", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"} %>
+					</li>
 					<% else %>
-						<%= link_to "Compost Calculator", new_user_session_path, class: "navbar-brand" %>
+					<li>
+						<%= link_to "Login", new_user_session_path %>
+					</li>
+					<li>
+						<%= link_to "Register", new_user_registration_path %>
+					</li>
 					<% end %>
-	            </div>
-	            <!-- Collect the nav links, forms, and other content for toggling -->
-	            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	                <ul class="nav navbar-nav">
-	                    <li>
-	                        <a href="#">About</a>
-	                    </li>
-						<%- if current_user %>
-						<li>
-							<%= link_to "New Composter", new_composter_path %>
-	                    </li>
-						<li>
-							<%= link_to "Logout", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"} %>
-						</li>
-						<% else %>
-						<li>
-							<%= link_to "Login", new_user_session_path %>
-						</li>
-						<li>
-							<%= link_to "Register", new_user_registration_path %>
-						</li>
-						<% end %>
-	                </ul>
-	            </div>
-	            <!-- /.navbar-collapse -->
-	        </div>
-	        <!-- /.container -->
-	    </nav>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
 
-	    <!-- Page Content -->
-	    <div class="container">
+	<!-- Page Content -->
+	<div class="container">
 
-	    	<div class="row">
-		    	<div class="col-lg-12 text-center">
-					<% flash.each do |a, b| %>
-						<div class="alert alert-success"> 
-							<% b%> </div>
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<% flash.each do |a, b| %>
+				<div class="alert alert-success"> 
+					<% b%> </div>
 					<% end %>
-		    		<%= yield %>
-		    	</div>
-	    	</div>
-	    	<!-- /.row -->
-	    </div>
-	    <!-- /.container -->
-	  <style>body{padding-top:70px;}</style>
+					<%= yield %>
+				</div>
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container -->
+		<style>body{padding-top:70px;}</style>
 	</body>
 	</html>
-
-<!-- test comment -->
