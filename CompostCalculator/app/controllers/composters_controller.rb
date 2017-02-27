@@ -4,6 +4,7 @@ class CompostersController < ApplicationController
   end
 
   def index
+    @composters = Composter.all
   end
 
   def show
@@ -22,6 +23,12 @@ class CompostersController < ApplicationController
   end
 
   def edit
+    @composter = Composter.find(params[:id])
+  end
+
+  def view
+    logger.warn "hoo"
+    logger.warn "ray"
     @composter = Composter.find(params[:id])
   end
 
