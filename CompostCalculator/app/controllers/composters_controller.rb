@@ -8,8 +8,7 @@ class CompostersController < ApplicationController
   end
 
   def show
-    /@composter = Composter.find(params[:id])/
-    @composter = current_user.composters.find(params[:id])
+    @composter = Composter.find(params[:id])
   end
 
   def create
@@ -24,8 +23,7 @@ class CompostersController < ApplicationController
   end
 
   def edit
-    /@composter = Composter.find(params[:id])/
-    @composter = current_user.composters.find(params[:id])
+    @composter = Composter.find(params[:id])
   end
 
   private 
