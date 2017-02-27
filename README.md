@@ -44,7 +44,7 @@ Functionality:
 
 For each profile:
 
-· View temp 
+· View temp
 · Add more items
 
 Background research:
