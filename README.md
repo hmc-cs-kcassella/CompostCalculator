@@ -13,9 +13,11 @@ GitHub: https://github.com/hmc-cs-kcassella/CompostCalculator.git
 Project Proposal
 
 Project summary:
+
 Have an interface that could inform students of the amount and a type of material to add to optimize composting conditions. In addition, it could be nice for this interface to inform students when they should turn compost so it can maintain the optimal 50-60 C temperature
 
 Problem description:
+
 For compost to process material most efficiently, it must have the correct ratio of greens to browns (carbon to nitrogen) and be within the correct temperature. Although it is possible to measure the amount of carbon and nitrogen in certain compounds, it is not feasible to do this are the numbers are often tabulated to an order of magnitude.
 
 Stakeholders:
