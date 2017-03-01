@@ -1,5 +1,11 @@
-<h2>New Composter</h2>
-<br>
+<!DOCTYPE html>
+  <body style="background-image: url(/assets/environment.jpg); background-repeat: 0; background-size: cover" >
+    <div class="row">
+      <div class="col-md-12" style="color: brown; font-size: 400%; font-family: fantasy">
+          New Composter
+      </div>
+    </div>
+    
 <%= form_for @composter do |f| %>
     <%= f.label :name %>
     <%= f.text_area :name %>
