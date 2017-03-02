@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+	<body style="background-image: url(/assets/environment.jpg); background-repeat: 0; background-size: cover" >
+		<div class="row">
+			<div class="col-md-12" style="color: brown; font-size: 400%; font-family: fantasy">
+					Let's Start Composting!
+			</div>
 <% @composters.each do |x| %>
 <div class="white">
 	<h2>
@@ -19,6 +25,8 @@
 </div>
 <% end %>
 <%- if current_user %>
-<%= link_to "Add Composter", new_composter_path %>
+<br>
+<a href="composters/new" class="btn btn-default">Add Composter</a>
+<br>
 <br>
 <% end %>
