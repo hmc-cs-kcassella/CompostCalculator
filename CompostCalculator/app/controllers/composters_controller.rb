@@ -27,8 +27,6 @@ class CompostersController < ApplicationController
   end
 
   def view
-    logger.warn "hoo"
-    logger.warn "ray"
     @composter = Composter.find(params[:id])
   end
 
