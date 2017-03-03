@@ -17,7 +17,7 @@ class CompostersController < ApplicationController
       flash[:success] = "Successs"
       redirect_to composter_path(@composter)
     else
-      flash[:error] = @composter.errors.full_messages
+      /flash[:error] = @composter.errors.full_messages/
       redirect_to new_composter_path
     end
   end
@@ -27,8 +27,6 @@ class CompostersController < ApplicationController
   end
 
   def view
-    logger.warn "hoo"
-    logger.warn "ray"
     @composter = Composter.find(params[:id])
   end
 
