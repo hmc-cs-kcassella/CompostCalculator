@@ -14,7 +14,6 @@ class CompostersController < ApplicationController
   def create
     @composter = Composter.new(permit_composter)
     if @composter.save
-      flash[:success] = "Successs"
       redirect_to composter_path(@composter)
     else
       flash[:error] = @composter.errors.full_messages
