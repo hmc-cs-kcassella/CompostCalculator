@@ -40,7 +40,7 @@
     </div>
     <div class="col-md-6">
       <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="addItems" data-toggle="dropdown" style="width: 100%">Add Item
+        <button class="composterButton dropdown-toggle" type="button" id="addItems" data-toggle="dropdown">Add Item
         <span class="caret"></span></button>   
           <ul class="dropdown-menu" role="menu" aria-labelledby="addItems" style="width: 100%">
              <li> 
@@ -52,13 +52,13 @@
               <input type="text" class="form-control" id="usr">
             </li>
             <li> 
-              <button type="button" class="btn btn-primary" style="width: 100%"> Add </button>
+              <button type="button" class="composterButton"> Add </button>
             </li>
           </ul>
       </div>
       <br>
       <div class="dropdown" style="width: 50">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="addItems" data-toggle="dropdown" style="width: 100%">Calculate Moisture Content
+        <button class="composterButton dropdown-toggle" type="button" id="addItems" data-toggle="dropdown">Calculate Moisture Content
         <span class="caret"></span></button>   
           <ul class="dropdown-menu" role="menu" aria-labelledby="moistureContent" style="width: 100%">
              <li> 
@@ -70,20 +70,17 @@
               <input type="text" class="form-control" id="usr">
             </li>
             <li> 
-              <button type="button" class="btn btn-primary" style="width: 100%"> Calculate </button>
+              <button type="button" class="composterButton"> Calculate </button>
             </li>
           </ul>
       </div>
       <br>
-      <button type="button" class="btn btn-primary" style="width: 100%"> Empty Composter</button>
+      <button type="button" class="composterButton"> Empty Composter</button>
       <br>
       <br>
-      <button type="button" class="btn btn-primary" style="width: 100%"> Delete Composter
-          <%= link_to root_path, @composter.destroy %>
-      </button>
+          <%= button_to("Delete", @composter, :method => :delete, class: "composterButton") %>
       <br>
-      <br>
-      <button type="button" class="btn btn-primary" style="width: 100%"> Save Changes</button>
+      <button type="button" class="composterButton"> Save Changes</button>
     </div>
   </div>
   </body>

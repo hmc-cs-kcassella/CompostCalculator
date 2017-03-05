@@ -30,6 +30,12 @@ class CompostersController < ApplicationController
     @composter = Composter.find(params[:id])
   end
 
+  def destroy
+    @composter = Composter.find(params[:id])
+    @composter.destroy
+    redirect_to root_path
+  end 
+
   private 
     def permit_composter
       params.require(:composter).permit(:name, :size)
