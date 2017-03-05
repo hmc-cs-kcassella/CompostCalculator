@@ -9,7 +9,7 @@
 				<%= f.label :name %>
 			</div>
 			<div>
-				<%= f.label :size %>
+				<%= f.label :Volume %>
 			</div>
 		</div>
 		<div class="col-xs-6">
@@ -25,5 +25,5 @@
 	<%= f.submit %>
 	<br>
 	<br>
-	<% end %>
 </div>
+<% end %>
