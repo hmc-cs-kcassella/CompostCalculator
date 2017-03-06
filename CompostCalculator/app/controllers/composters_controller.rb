@@ -35,8 +35,17 @@ class CompostersController < ApplicationController
     redirect_to root_path
   end 
 
+  def update
+     @composter = Composter.update(permit_composter_moisture)
+      redirect_to composter_path(@composter)
+  end
+
   private 
     def permit_composter
       params.require(:composter).permit(:name, :size)
+    end
+
+    def permit_composter_moisture
+      params.require(:composter).permit(:wetWeight, :dryWeight)
     end
 end

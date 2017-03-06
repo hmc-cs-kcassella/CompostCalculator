@@ -30,6 +30,12 @@
                 <%= "Carbon Nitrogen Ratio:" %>
                 <br>
                 <%= "Current Moisture Content:" %>
+                  <%- if @composter.wetWeight %>
+                  <%- if @composter.dryWeight %>
+                    <%= (100*(@composter.wetWeight - @composter.dryWeight)/(@composter.wetWeight)) %>
+                    %
+                  <% end %>
+                <% end %>
                 <br>
                 <br>
                 <button class="composterButton">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227052837) do
+ActiveRecord::Schema.define(version: 20170306061313) do
 
   create_table "composters", force: :cascade do |t|
     t.text     "name"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20170227052837) do
     t.float    "flipTime"
     t.float    "cNRatio"
     t.float    "moistureContent"
+    t.float    "wetWeight"
+    t.float    "dryWeight"
   end
 
   create_table "users", force: :cascade do |t|
