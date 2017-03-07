@@ -1,28 +1,31 @@
 
 <!DOCTYPE html>
-	<body style="background-image: url(/assets/environment.jpg); background-repeat: 0; background-size: cover" >
-		<div class="row">
-			<div class="col-md-12" style="color: brown; font-size: 400%; font-family: fantasy">
-					Let's Start Composting!
-			</div>
+<body style="background-image: url(/assets/environment.jpg); background-repeat: 0; background-size: cover" >
+	<div class="row">
+		<div class="col-md-12" style="color: brown; font-size: 400%; font-family: fantasy; background-color: white; border: 1px solid black; padding: 25px; margin: 20px;">
+			Let's Start Composting!
+		</div>
+		<br>
+
 <% @composters.each do |x| %>
 <div class="white">
-	<h2>
+	<h2 style="background-color: white; border: 1px solid black; padding: 5px; margin: auto; width: 400px">
 		<%= x.name %>
 	</h2>
 	<br>
-	<img src="/assets/tempCompost.jpg" alt="Compost" style="width:200px;height:auto;">
+	<img src="/assets/tempCompost.jpg" alt="Compost" style="width:200px;height:auto; ">
 	<br>
-	Volume: <%= x.size %>
-	TODO: add edit and view
-	<br>
-	<button type="button">
-    <%= link_to "Edit Composter", edit_composter_path(x.id) %>
-	</button>
-	<br>
-	<button type="button">
-	how to
-	</button>
+	<div style="background-color: white; border: 1px solid black; padding: 5px; width: 300px; margin: auto;">
+		Volume: <%= x.size %>
+		<br>
+		<button type="button">
+			<%= link_to "Edit Composter", edit_composter_path(x.id) %>
+		</button>
+		<br>
+		<button type="button">
+		View
+		</button>
+	</div>
 </div>
 <% end %>
 <%- if current_user %>
