@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  dryWeight: 1.5
+  wetWeight: 1.5
+
+two:
+  type: 
+  dryWeight: 1.5
+  wetWeight: 1.5
