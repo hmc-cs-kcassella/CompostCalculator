@@ -1,2 +1,5 @@
-<h1>Updates#show</h1>
-<p>Find me in app/views/updates/show.html.erb</p>
+<%= form_for @update do |f| %>
+        <button class="composterButton">
+            <%= link_to "Add items", new_item_path(f), style: "color: white" %>
+        </button>
+	<%= f.submit %>

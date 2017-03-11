@@ -1,2 +1,7 @@
-<h1>Updates#index</h1>
-<p>Find me in app/views/updates/index.html.erb</p>
+
+<% @updates.each do |x| %>
+		 <button class="composterButton">
+            <%= link_to "Add items", new_item_path(x), style: "color: white" %>
+        </button>
+		<% end %>
+

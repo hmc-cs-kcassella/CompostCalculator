@@ -5,6 +5,19 @@
         <button class="composterButton">
             <%= link_to "Add items", new_item_path(f), style: "color: white" %>
         </button>
+		
+	<div class="row" style="width:400px; margin:0 auto;">
+		<div class="col-xs-6">
+			<div>
+				<%= f.label :wetWeight %>
+			</div>
+		</div>
+		<div class="col-xs-6">
+			<div>
+				<%= f.number_field :wetWeight, class: :text_field, step: :any%>
+			</div>
+		</div>
+	</div>
 	<%= f.submit %>
 	<br>
 	<br>

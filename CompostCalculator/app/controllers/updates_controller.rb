@@ -14,7 +14,7 @@ class UpdatesController < ApplicationController
   def create
     @update = Update.new(permit_update)
     if @update.save
-      redirect_to updates_new_path(@update)
+      redirect_to updates_show_path(@update)
     else
       flash[:error] = @update.errors.full_messages
       redirect_to new_update_path
@@ -32,7 +32,7 @@ class UpdatesController < ApplicationController
 
   private 
     def permit_update
-      params.require(:update).permit(:name)
+      params.require(:update).permit(:wetWeight)
     end
 end
 
