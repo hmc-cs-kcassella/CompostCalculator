@@ -1,0 +1,13 @@
+<div style="width:400px; padding: 5px;margin:0 auto; background-color: lightblue; border: 1px solid black;">
+	<h2>New Update</h2>
+	<br>
+	<%= form_for @update do |f| %>
+        <%= link_to "Add Item", new_item_path(@update), style: "color: white" %>
+        TODO: Somehow link to new item
+	<br>
+	<%= f.submit %>
+	<br>
+	<br>
+	<% end %>
+</div>
+
