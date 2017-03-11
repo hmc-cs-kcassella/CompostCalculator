@@ -2,12 +2,14 @@
 	<h2>New Update</h2>
 	<br>
 	<%= form_for @update do |f| %>
-        <%= link_to "Add Item", new_item_path(@update), style: "color: white" %>
-        TODO: Somehow link to new item
-	<br>
+        <button class="composterButton">
+            <%= link_to "Add items", new_item_path(f), style: "color: white" %>
+        </button>
 	<%= f.submit %>
 	<br>
 	<br>
 	<% end %>
 </div>
+
+
 

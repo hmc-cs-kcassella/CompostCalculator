@@ -31,12 +31,6 @@
                 <%= @composter.cNRatio %>
                 <br>
                 <%= "Current Moisture Content:" %>
-                <%- if @composter.wetWeight %>
-                  <%- if @composter.dryWeight %>
-                    <%= (100*(@composter.wetWeight - @composter.dryWeight)/(@composter.wetWeight)) %>
-                    %
-                  <% end %>
-                <% end %>
                 <br>
               </div>
               <div class="col-md-5">
@@ -48,54 +42,9 @@
         </div>     
     </div>
     <div class="col-md-6">
-      <div class="dropdown">
-        <button class="composterButton dropdown-toggle" type="button" id="addItems" data-toggle="dropdown">Add Item
-        <span class="caret"></span></button>   
-          <ul class="dropdown-menu" role="menu" aria-labelledby="addItems" style="width: 100%">
-             <li> 
-              <label>Type:</label>
-              <input type="number">
-            </li>
-            <li> 
-              <label>Amount:</label>
-              <input type="number">
-            </li>
-            <li> 
-              <button type="button" class="composterButton"> Add </button>
-            </li>
-          </ul>
-      </div>
-      <br>
-      <div class="dropdown" style="width: 50">
-        <button class="composterButton dropdown-toggle" type="button" id="addItems" data-toggle="dropdown">Calculate Moisture Content
-        <span class="caret"></span></button>   
-          <ul class="dropdown-menu" role="menu" aria-labelledby="moistureContent" style="width: 100%">
-          	<%= form_for @composter do |f| %>
-	          <div class="row" style="width:400px; margin:0 auto;">
-              <div class="col-xs-6">
-                <div>
-                  <%= f.label :wetWeight %>
-                </div>
-                <div>
-                  <%= f.label :dryWeight %>
-                </div>
-              </div>
-              <div class="col-xs-6">
-                <div>
-                  <%= f.number_field :wetWeight, class: :text_field, step: :any%>
-                </div>
-                <div>
-                  <%= f.number_field :dryWeight, class: :text_field, step: :any%>
-                </div>
-              </div>
-            </div>
-            <br>
-              <button class="composterButton" type="submit" data-disable-with="Calculate">
-                Calculate
-              </button>
-            <% end %>
-          </ul>
-      </div>
+        <button class="composterButton">
+         <%= link_to "Update Contents", updates_new_path(@composter.id), style: "color: white" %>
+        </button>
       <br>
       <button type="button" class="composterButton"> Empty Composter</button>
       <br>
