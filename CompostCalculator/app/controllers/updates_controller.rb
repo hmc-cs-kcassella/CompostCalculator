@@ -32,7 +32,7 @@ class UpdatesController < ApplicationController
 
   private 
     def permit_update
-      params.require(:update).permit(:wetWeight)
+      params.require(:update).permit(:wetWeight, @composter.id)
     end
 end
 
