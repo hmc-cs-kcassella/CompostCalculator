@@ -6,45 +6,111 @@
 		</div>
 		<br>
 		<div class="col-md-12" style="left: 12.5%; width: 75%">
-		<% @composters.each do |x| %>
-			<div class="panel panel-default" style="background-color: #101010; width: 20%;border-style: solid; margin: 1%; float: left;"> 
-				<div class="panel-heading" style="background: #101010; color: gray; font-family: Helvetica, sans-serif" >
-					<%- if x.name %>
-						<%= x.name %>
-					<% else %>
-						<br>
-					<% end %>
-				</div>
-				<div class="panel-body" style="text-align: left; color: gray; font: medium">
-					<%= "Composter Volume:" %>
-					<%- if x.size %>
-						<%= x.size %>
-					<% else %>
-						<br>
-					<% end %>
-					<br>
-					<%= "Current Temperature:" %>
-					<br>
-					<%= "Time until next flip:" %>
-					<br>
-					<%= "Carbon Nitrogen Ratio:" %>
-					<br>
-					<%= "Current Moisture Content:" %>
-					<br>
-					<br>
-					<button class="composterButton">
-					<%= link_to "Edit Composter", edit_composter_path(x.id), style: "color: white; left: 12.5%; width: 75%" %>
-					</button>
-					<button type="button" class="composterButton" style: "color: white; left: 12.5%; width: 75%">
-						<%= link_to 'View', page_path('history') %>
-					</button>          
-				</div>
+
+
+ <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+		<% @composters.each_with_index do |x, index| %>
+			<%- if index == 0 %>
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<% else %>
+				<li data-target="#myCarousel" data-slide-to=#{index} ></li>
+			<% end %>
+		<% end %>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+		<% @composters.each_with_index do |x, index| %>
+			<%- if index == 0 %>
+				 <div class="item active">
+					 <div class="panel panel-default" style="background: #101010; color: gray; font-family: Helvetica, sans-serif"> 
+						<div class="panel-heading"  >
+							<%- if x.name %>
+								<%= x.name %>
+							<% else %>
+								<br>
+							<% end %>
+						</div>
+						<div class="panel-body" style="text-align: left; color: gray; font: medium">
+							<%= "Composter Volume:" %>
+							<%- if x.size %>
+								<%= x.size %>
+							<% else %>
+								<br>
+							<% end %>
+							<br>
+							<%= "Current Temperature:" %>
+							<br>
+							<%= "Time until next flip:" %>
+							<br>
+							<%= "Carbon Nitrogen Ratio:" %>
+							<br>
+							<%= "Current Moisture Content:" %>
+							<br>
+							<br>
+							<button class="composterButton">
+							<%= link_to "Edit Composter", edit_composter_path(x.id), style: "color: white; left: 12.5%; width: 75%" %>
+							</button>
+							<button type="button" class="composterButton" style: "color: white; left: 12.5%; width: 75%">
+								<%= link_to 'View', page_path('history') %>
+							</button>          
+						</div>
 			</div>	
-		<% end %>
-		<%- if current_user %>
-		<div style="width: 23%; margin: 1%; float: left; margin-top: 30px">
-			<a href="composters/new" class="btn btn-default">Add Composter</a>
-		</div>
-		<% end %>
-		</div>
+        		</div>
+			<% else %>
+				<div class="item">			
+					<div class="panel panel-default" style="background-color: #101010; width: 20%;border-style: solid; margin: 1%; float: left;"> 
+						<div class="panel-heading" style="background: #101010; color: gray; font-family: Helvetica, sans-serif" >
+							<%- if x.name %>
+								<%= x.name %>
+							<% else %>
+								<br>
+							<% end %>
+						</div>
+						<div class="panel-body" style="text-align: left; color: gray; font: medium">
+							<%= "Composter Volume:" %>
+							<%- if x.size %>
+								<%= x.size %>
+							<% else %>
+								<br>
+							<% end %>
+							<br>
+							<%= "Current Temperature:" %>
+							<br>
+							<%= "Time until next flip:" %>
+							<br>
+							<%= "Carbon Nitrogen Ratio:" %>
+							<br>
+							<%= "Current Moisture Content:" %>
+							<br>
+							<br>
+							<button class="composterButton">
+							<%= link_to "Edit Composter", edit_composter_path(x.id), style: "color: white; left: 12.5%; width: 75%" %>
+							</button>
+							<button type="button" class="composterButton" style: "color: white; left: 12.5%; width: 75%">
+								<%= link_to 'View', page_path('history') %>
+							</button>          
+						</div>
+					</div>	
+				</div>
+			<% end %>
+		<% end %>   
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+	<%- if current_user %>
+	<div style="width: 23%; margin: 1%; float: left; margin-top: 30px">
+		<a href="composters/new" class="btn btn-default">Add Composter</a>
 	</div>
+	<% end %>
+	</div>
+</div>
