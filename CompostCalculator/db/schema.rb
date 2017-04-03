@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20170311211858) do
     t.string   "name"
   end
 
-  create_table "updates", force: :cascade do |t|
+  create_table "informations", force: :cascade do |t|
     t.float    "wetWeight"
     t.float    "dryWeight"
     t.float    "cNRatio"

@@ -40,13 +40,25 @@
 							<% end %>
 							<br>
 							<%= "Current Temperature:" %>
+							<%- if x.temperature %>
+								<%= x.temperature %>
+							<% else %>
+								<br>
+							<% end %>
 							<br>
 							<%= "Time until next flip:" %>
+							<%- if x.flipTime %>
+								<%= x.flipTime %>
+							<% else %>
+								<br>
+							<% end %>
 							<br>
 							<%= "Carbon Nitrogen Ratio:" %>
-							<br>
-							<%= "Current Moisture Content:" %>
-							<br>
+							<%- if x.cNRatio %>
+								<%= x.cNRatio %>
+							<% else %>
+								<br>
+							<% end %>
 							<br>
 							<button class="composterButton">
 							<%= link_to "Edit Composter", edit_composter_path(x.id), style: "color: white; left: 12.5%; width: 75%" %>
