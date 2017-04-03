@@ -7,7 +7,7 @@
 		<br>
 		<div class="col-md-12" style="left: 12.5%; width: 75%">
 		<% @composters.each do |x| %>
-			<div class="panel panel-default" style="background-color: #101010; width: 20%;border-style: solid; margin: 1%; float: left;"> 
+			<div class="panel panel-default" style="background-color: #101010; width: 20%;border-style: solid; margin: 1%; float: left;">
 				<div class="panel-heading" style="background: #101010; color: gray; font-family: Helvetica, sans-serif" >
 					<%- if x.name %>
 						<%= x.name %>
@@ -36,10 +36,10 @@
 					<%= link_to "Edit Composter", edit_composter_path(x.id), style: "color: white; left: 12.5%; width: 75%" %>
 					</button>
 					<button type="button" class="composterButton" style: "color: white; left: 12.5%; width: 75%">
-						<%= link_to 'View', page_path('history') %>
-					</button>          
+						<%= link_to 'View History', page_path('history'), style: "color: white; left: 12.5%; width: 75%" %>
+					</button>
 				</div>
-			</div>	
+			</div>
 		<% end %>
 		<%- if current_user %>
 		<div style="width: 23%; margin: 1%; float: left; margin-top: 30px">
