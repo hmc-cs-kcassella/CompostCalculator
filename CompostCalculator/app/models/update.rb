@@ -1,4 +1,4 @@
 class Update < ApplicationRecord
-    belongs_to :composters
+    belongs_to :composter
     has_many :items
 end
