@@ -6,4 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Composter.create(name: 'Juan', size: 40.0, temperature: 70, flipTime: 25, cNRatio: 30.0)
+Composter.create(name: 'ESW/MOSS', size: 40.0, temperature: 70, flipTime: 25, cNRatio: 30.0)
+Composter.create(name: 'Elise')
