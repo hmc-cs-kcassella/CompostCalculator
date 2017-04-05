@@ -1,5 +1,46 @@
-<h1>New Item</h1>
+<!DOCTYPE html>
+	<body style="background-image: url(/assets/environment.jpg); background-repeat: 0; background-size: cover" >
+		<div class="row">
+			<div class="col-md-12" style="color: white; font-size: 400%; font-family: fantasy">
+					New Item
+			</div>
+<br>
+<br>
+<br>
+<br>
+<div style="width:400px; padding: 5px;margin:0 auto; background-color: lightblue; border: 1px solid black;">
+	<br>
+	<%= form_for @item do |f| %>
 
-<%= render 'form', item: @item %>
-
-<%= link_to 'Back', items_path %>
+	<div class="row" style="width:400px; margin:0 auto;">
+		<div class="col-xs-6">
+			<div>
+				<%= f.label :name %>
+			</div>
+			<div>
+				<%= f.label :dryWeight %>
+				(grams)
+			</div>
+            <div>
+				<%= f.label :wetWeight %>
+				(grams)
+			</div>
+		</div>
+		<div class="col-xs-6">
+			<div>
+				<%= f.text_field :name, size: "20x1"%>
+			</div>
+			<div>
+				<%= f.number_field :wetWeight, class: :text_field, step: :any%>
+			</div>
+            <div>
+				<%= f.number_field :dryWeight, class: :text_field, step: :any%>
+			</div>
+		</div>
+	</div>
+	<br>
+	<%= f.submit %>
+	<br>
+	<br>
+	<% end %>
+</div>
