@@ -1,0 +1,2 @@
+module ComposterUpdatesHelper
+end

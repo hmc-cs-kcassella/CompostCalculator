@@ -1,3 +1,3 @@
 class Item < ApplicationRecord
-    belongs_to :updates
+  belongs_to :ComposterUpdate
 end

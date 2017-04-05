@@ -1,39 +1,5 @@
-<!DOCTYPE html>
-	<body style="background-image: url(/assets/environment.jpg); background-repeat: 0; background-size: cover" >
-		<div class="row">
-			<div class="col-md-12" style="color: brown; font-size: 400%; font-family: fantasy">
-					New Composter
-			</div>
-<br>
-<br>
-<br>
-<br>
-<div style="width:400px; padding: 5px;margin:0 auto; background-color: lightblue; border: 1px solid black;">
-	<h2>Enter Compost Information</h2>
-	<br>
-	<%= form_for @composter do |f| %>
+<h1>New Composter</h1>
 
-	<div class="row" style="width:400px; margin:0 auto;">
-		<div class="col-xs-6">
-			<div>
-				<%= f.label :name %>
-			</div>
-			<div>
-				<%= f.label :size %>
-			</div>
-		</div>
-		<div class="col-xs-6">
-			<div>
-				<%= f.text_field :name, size: "20x1"%>
-			</div>
-			<div>
-				<%= f.number_field :size, class: :text_field, step: :any%>
-			</div>
-		</div>
-	</div>
-	<br>
-	<%= f.submit %>
-	<br>
-	<br>
-	<% end %>
-</div>
+<%= render 'form', composter: @composter %>
+
+<%= link_to 'Back', composters_path %>
