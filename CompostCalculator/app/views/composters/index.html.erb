@@ -23,6 +23,7 @@
 		<% @composters.each_with_index do |x, index| %>
 			<%- if index == 0 %>
 				 <div class="item active">
+					 <div class="container">
 					 <div class="panel panel-default" style="background: #101010; color: gray; font-family: Helvetica, sans-serif"> 
 						<div class="panel-heading"  >
 							<%- if x.name %>
@@ -57,8 +58,10 @@
 						</div>
 					</div>	
         		</div>
+				</div>
 			<% else %>
-				<div class="item">			
+				<div class="item">	
+					<div class="container">		
 					<div class="panel panel-default" style="background-color: #101010; width: 20%;border-style: solid; margin: 1%; float: left;"> 
 						<div class="panel-heading" style="background: #101010; color: gray; font-family: Helvetica, sans-serif" >
 							<%- if x.name %>
@@ -92,6 +95,7 @@
 							</button>          
 						</div>
 					</div>	
+				</div>
 				</div>
 			<% end %>
 		<% end %>   
