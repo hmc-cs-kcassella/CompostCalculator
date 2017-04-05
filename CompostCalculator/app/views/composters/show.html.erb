@@ -1,48 +1,24 @@
-<!DOCTYPE html>
-<body style="background-image: url(/assets/environment.jpg); background-repeat: repeat-0; background-size: cover" >
-  <div class="row" class="col-md-12" style="color: white; font-size: 400%; font-family: fantasy">
-    <br>
-    <b>
-      Composter Information
-    </b>
-  </div>
-  <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6" name= "composterCol">
-      <div class="panel panel-default" style="background-color: #101010; width: 100%;"> 
-        <div class="panel-heading" style="background: #101010; color: gray; font-family: Helvetica, sans-serif" >Current Composter Information</div>
-        <div class="panel-body" style="text-align: left; color: gray; font: medium">
-          <div class="row">
-            <div class="col-md-7">
-              <%= "Name:" %>
-              <%= @composter.name %>
-              <br>
-              <%= "Composter Volume:" %>
-              <%= @composter.size %>
-              <br>
-              <%= "Current Temperature:" %>
-              <br>
-              <%= "Time until next flip:" %>
-              <br>
-              <%= "Carbon Nitrogen Ratio:" %>
-              <br>
-              <%= "Current Moisture Content:" %>
-              <%- if @composter.wetWeight %>
-              <%- if @composter.dryWeight %>
-              <%= (100*(@composter.wetWeight - @composter.dryWeight)/(@composter.wetWeight)) %>
-              <% end %>
-              <% end %>
-              <br>
-              <br>
-              <button class="composterButton">
-                <%= link_to "Edit Composter", edit_composter_path, style: "color: white" %>
-              </button>
-            </div>
-            <div class="col-md-5">
-              <br>
-              <img src=/assets/logocropped.png style="vertical-align: middle">
-            </div>
-          </div>            
-        </div>
-      </div>
+<p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Name:</strong>
+  <%= @composter.name %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @composter.size %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @composter.temperature %>
+</p>
+
+<p>
+  <strong>Fliptime:</strong>
+  <%= @composter.flipTime %>
+</p>
+
+<%= link_to 'Edit', edit_composter_path(@composter) %> |
+<%= link_to 'Back', composters_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wetWeight: 1.5
+  dryWeight: 1.5
+  cNRatio: 1.5
+
+two:
+  wetWeight: 1.5
+  dryWeight: 1.5
+  cNRatio: 1.5

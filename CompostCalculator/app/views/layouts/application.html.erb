@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CompostCalculator</title>
+	<title>Compost Calculator</title>
 	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
@@ -34,12 +34,9 @@
 						<li>
 							<%= link_to "New Composter", new_composter_path %>
 	                    </li>
-            			<li>
-							<%= link_to "Views", page_path('views') %>
-						</li>
-           				 <li>
+           				 <!-- <li>
               				<%= link_to 'Compost History', page_path('history') %>
-						</li>
+						</li> -->
 						<li>
 							<%= link_to "Logout", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"} %>
 						</li>

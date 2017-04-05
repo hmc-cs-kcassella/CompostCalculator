@@ -1,4 +1,5 @@
 class CompostersController < ApplicationController
+
   def new
     @composter = Composter.new
   end
