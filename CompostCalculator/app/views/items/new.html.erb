@@ -1,22 +1,101 @@
+
 <!DOCTYPE html>
+<html>
+<head>
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+#myInput {
+    border-box: box-sizing;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}
+</style>
+</head>
 	<body style="background-image: url(/assets/environment.jpg); background-repeat: 0; background-size: cover" >
 		<div class="row">
 			<div class="col-md-12" style="color: white; font-size: 400%; font-family: fantasy">
 					New Item
 			</div>
-<br>
-<br>
-<br>
-<br>
-<div style="width:400px; padding: 5px;margin:0 auto; background-color: lightblue; border: 1px solid black;">
+		<br>
+		<br>
+		<br>
+		<br>
+<div style="width:600px; margin:0 auto; background-color: lightblue; border: 1px solid black;">
 	<br>
 	<%= form_for @item do |f| %>
 
-	<div class="row" style="width:400px; margin:0 auto;">
-		<div class="col-xs-6">
-			<div>
-				<%= f.label :name %>
+	<div class="row" style="width:500px; margin:0 auto;">
+		<div class="col-md-5">
+			<div class="dropdown">
+				<button onclick="myFunction()" class="dropbtn">Type of Item</button>
+				<div id="myDropdown" class="dropdown-content">
+					<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+					<a href="#alfalfa">Alfalfa</a>
+					<a href="#ashes">Ashes</a>
+					<a href="#cardboard">Cardboard</a>
+					<a href="#clover">Clover</a>
+					<a href="#coffeegrounds">Coffee Grounds</a>
+					<a href="#cornstalks">Corn Stalks</a>
+					<a href="#foodwaste">Food Waste</a>
+					<a href="#fruitwaste">Fruit Waste</a>
+					<a href="#gardenwaste">Garden Waste</a>
+					<a href="#grassclippings">Grass Clippings</a>
+					<a href="#hay">Hay</a>
+					<a href="#leaves">Leaves</a>
+					<a href="#manures">Manures</a>
+					<a href="#newspapers">Newspapers</a>
+					<a href="#peanutshells">Peanut Shells</a>
+					<a href="#pineneedles">Pine Needles</a>
+					<a href="#seaweed">Seaweed</a>
+					<a href="#straw">Straw</a>
+					<a href="#vegetablescraps">Vegetable Scraps</a>
+					<a href="#weeds">Weeds</a>
+					<a href="#woodchips">Wood Chips</a>
+				</div>
 			</div>
+		</div>
+		<div class="col-md-4">
 			<div>
 				<%= f.label :dryWeight %>
 				(grams)
@@ -26,10 +105,7 @@
 				(grams)
 			</div>
 		</div>
-		<div class="col-xs-6">
-			<div>
-				<%= f.text_field :name, size: "20x1"%>
-			</div>
+		<div class="col-md-3">
 			<div>
 				<%= f.number_field :wetWeight, class: :text_field, step: :any%>
 			</div>
@@ -44,3 +120,36 @@
 	<br>
 	<% end %>
 </div>
+<<<<<<< HEAD
+
+
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
+
+
+=======
+>>>>>>> 35047318f88137e3fdf18089ed5b512412d55895
