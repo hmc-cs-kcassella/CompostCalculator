@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wetWeight: 1.5
+  dryWeight: 1.5
+  cNRation: 1.5
+  Composter: one
+
+two:
+  wetWeight: 1.5
+  dryWeight: 1.5
+  cNRation: 1.5
+  Composter: two

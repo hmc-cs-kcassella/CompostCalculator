@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  type: 
-  dryWeight: 1.5
   wetWeight: 1.5
+  dryWeight: 1.5
+  ComposterUpdate: one
 
 two:
-  type: 
-  dryWeight: 1.5
   wetWeight: 1.5
+  dryWeight: 1.5
+  ComposterUpdate: two

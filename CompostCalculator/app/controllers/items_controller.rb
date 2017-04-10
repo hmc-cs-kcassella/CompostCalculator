@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-    def new
+  
+  def new
     @item = Item.new
   end
 

@@ -27,9 +27,6 @@
                 <%= "Time until next flip (hours):" %>
                 <%= @composter.flipTime %>
                 <br>
-                <%= "Carbon Nitrogen Ratio:" %>
-                <%= @composter.cNRatio %>
-                <br>
                 <%= "Current Moisture Content:" %>
                 <br>
               </div>
@@ -43,7 +40,7 @@
     </div>
     <div class="col-md-6">
         <button class="composterButton">
-         <%= link_to "Update Contents", new_update_path(@composter.id), style: "color: white" %>
+         <%= link_to "Update Contents", new_composter_update_path(@composter.id), style: "color: white" %>
         </button>
       <br>
       <button type="button" class="composterButton"> Empty Composter</button>
@@ -53,4 +50,3 @@
     </div>
   </div>
   </body>
-  
