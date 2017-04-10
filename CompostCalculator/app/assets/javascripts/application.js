@@ -14,4 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require bootstrap-checkbox-radio-switch
+//= bootstrap-notify
+//= bootstrap-select
+//= boostrap.min
+//= chartist.min
+//= cable
+//= jquery-1.10.2
+//= light-bootstrap-dashboard
 //= require_tree .
+//= require_self
