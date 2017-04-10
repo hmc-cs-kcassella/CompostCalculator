@@ -1,38 +1,38 @@
 class ComposterUpdatesController < ApplicationController
 
   def new
-    @update = Update.new
+    @composterUpdate = ComposterUpdate.new
   end
 
   def index
-    @updates = Update.all
+    @composterUpdate = ComposterUpdate.all
   end
 
   def show
-    @update = Update.find(params[:id])
+    @composterUpdate = ComposterUpdate.find(params[:id])
   end
 
   def create
-    @update = Update.new(permit_update)
-    if @update.save
-      redirect_to updates_show_path(@update)
+    @composterUpdate = ComposterUpdate.new(permit_update)
+    if @composterUpdate.save
+      redirect_to composter_update_path(@composterUpdate)
     else
-      flash[:error] = @update.errors.full_messages
-      redirect_to new_update_path
+      flash[:error] = @composterUpdate.errors.full_messages
+      redirect_to new_composter_update_path
     end
   end
 
   def edit
-    @update = Update.find(params[:id])
+    @composterUpdate = ComposterUpdate.find(params[:id])
   end
 
   def view
-    @update = Update.find(params[:id])
+    @composterUpdate = ComposterUpdate.find(params[:id])
   end
 
 
   private 
     def permit_update
-      params.require(:update).permit(:wetWeight, @composter.id)
+      params.require(:composterUpdate).permit(:composter_id)
     end
 end

@@ -1,37 +1,19 @@
-<%= form_for(composter_update) do |f| %>
-  <% if composter_update.errors.any? %>
+<%= form_for(@composterUpdate) do |f| %>
+  <% if @composterUpdate.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(composter_update.errors.count, "error") %> prohibited this composter_update from being saved:</h2>
+      <h2><%= pluralize(@composterUpdate.errors.count, "error") %> prohibited this @composterUpdate from being saved:</h2>
 
       <ul>
-      <% composter_update.errors.full_messages.each do |message| %>
+      <% @composterUpdate.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :wetWeight %>
-    <%= f.text_field :wetWeight %>
-  </div>
-
-  <div class="field">
-    <%= f.label :dryWeight %>
-    <%= f.text_field :dryWeight %>
-  </div>
-
-  <div class="field">
-    <%= f.label :cNRation %>
-    <%= f.text_field :cNRation %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Composter_id %>
-    <%= f.text_field :Composter_id %>
-  </div>
+<%= hidden_field_tag(:composter_id, @composter.id) %>
 
   <div class="actions">
-    <%= f.submit %>
+      <%= f.submit %>
   </div>
 <% end %>
