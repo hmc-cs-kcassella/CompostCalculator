@@ -12,21 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :wetWeight %>
+    <%= f.label :name%> <b> (C:N Ratio) <b>
+     <%= f.select :name, ['Alfalfa (12:1)', 'Ashes (25:1)', 'Cardboard (350:1)', 'Clover (23:1)', 'Coffee (20:1)', 'Corn Stalks (75:1)',
+      'Food Waste (20:1)', 'Fruit Waste (35:1)', 'Garden Waste (30:1)', 'Grass Clippings (20:1)', '(Hay 25:1)', 'Leaves (60:1)', 'Manures (15:1)', 
+      'Newspapers (175:1)', 'Peanut Shells (35:1)', 'Pine Needles (80:1)', 'Seaweed (19:1)', 'Straw (75:1)', 'Vegetable Scraps (25:1)',
+      'Weeds (30:1)', 'Wood Chips (400:1)']%>
+  </div>
+
+  <div class="field">
+    <%= f.label :wetWeight %> <b> (grams) <b>
     <%= f.text_field :wetWeight %>
   </div>
 
   <div class="field">
-    <%= f.label :dryWeight %>
+    <%= f.label :dryWeight %> <b> (grams) <b>
     <%= f.text_field :dryWeight %>
   </div>
 
-  <div class="field">
-    <%= f.label :ComposterUpdate_id %>
-    <%= f.text_field :ComposterUpdate_id %>
-  </div>
-
   <div class="actions">
-    <%= f.submit %>
+    <button class= "btn btn-default" style="background-color: black; width: 150px"  >
+      <%= link_to "Add Item", f.submit %>
+    </button>
   </div>
 <% end %>

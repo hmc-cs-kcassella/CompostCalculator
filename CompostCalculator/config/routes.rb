@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+  devise_for :installs
   root 'composters#index'
   resources :composters
   resources :composter_updates
