@@ -1,3 +1,3 @@
 class Composter < ApplicationRecord
-  has_many :ComposterUpdate
+  has_many :ComposterUpdate, dependent: :destroy
 end
