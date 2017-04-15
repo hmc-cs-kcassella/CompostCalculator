@@ -27,8 +27,10 @@ ActiveRecord::Schema.define(version: 20170410050558) do
     t.float    "size"
     t.float    "temperature"
     t.float    "flipTime"
+    t.integer  "User_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["User_id"], name: "index_composters_on_User_id"
   end
 
   create_table "items", force: :cascade do |t|
