@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410050558) do
+ActiveRecord::Schema.define(version: 20170405052309) do
 
   create_table "composter_updates", force: :cascade do |t|
     t.float    "wetWeight"
@@ -31,16 +31,6 @@ ActiveRecord::Schema.define(version: 20170410050558) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["User_id"], name: "index_composters_on_User_id"
-  end
-
-  create_table "items", force: :cascade do |t|
-    t.float    "wetWeight"
-    t.float    "dryWeight"
-    t.integer  "ComposterUpdate_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "name"
-    t.index ["ComposterUpdate_id"], name: "index_items_on_ComposterUpdate_id"
   end
 
   create_table "users", force: :cascade do |t|
