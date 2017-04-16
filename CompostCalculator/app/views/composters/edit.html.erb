@@ -1,6 +1,55 @@
-<h1>Editing Composter</h1>
-
-<%= render 'form', composter: @composter %>
-
-<%= link_to 'Show', @composter %> |
-<%= link_to 'Back', composters_path %>
+<!DOCTYPE html>
+  <body style="background-image: url(/assets/environment.jpg); background-repeat: repeat-0; background-size: cover" >
+    <div class="row">
+      <div class="col-md-12" style="color: white; font-size: 400%; font-family: fantasy">
+        <br>
+        <b>
+          Edit Composter
+        </b>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6" name= "composterCol">
+      <div class="panel panel-default" style="background: rgba(255,255,255,0.5); "> 
+        <div class="panel-heading" style="background: rgba(255,255,255,0.5);; color: black; font-family: Helvetica, sans-serif" >Current Composter Information</div>
+          <div class="panel-body" style="text-align: left; color: black; font: medium">
+            <div class="row">
+              <div class="col-md-7">
+                <%= "Name:" %>
+                <%= @composter.name %>
+                <br>
+                <%= "Composter Volume (square meters):" %>
+                <%= @composter.size %>
+                <br>
+                <%= "Current Temperature (celcius):" %>
+                <%= @composter.temperature %>
+                <br>
+                <%= "Time until next flip (hours):" %>
+                <%= @composter.flipTime %>
+                <br>
+                <%= "Current Moisture Content:" %>
+                <br>
+              </div>
+              <div class="col-md-5">
+                <br>
+                <img src=/assets/logocropped.png style="vertical-align: middle">
+              </div>
+            </div>            
+          </div>
+        </div>     
+    </div>
+    <div class="col-md-4">
+        <button class="composterButton" style="width: 200px">
+         <%= link_to "Update Contents", new_composter_update_path(@composter.id), style: "width: 200px; background: rgba(255,255,255,0.5); color: black" %>
+        </button>
+      <br>
+      <br>
+      <button type="button" class="composterButton" style= "width: 200px; background: rgba(255,255,255,0.5); color: black;"> Empty Composter</button>
+      <br>
+      <br>
+          <%= button_to("Delete", @composter, :method => :delete, class: "composterButton", style: "width:200px; background: rgba(255,255,255,0.5); color:black") %>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+  </body>

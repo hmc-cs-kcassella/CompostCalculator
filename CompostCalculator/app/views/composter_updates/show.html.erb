@@ -1,16 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Cuid:</strong>
-  <%= @composter_update.cuid %>
-</p>
-
-<p>
-  <strong>Cid:</strong>
-  <%= @composter_update.cid %>
-</p>
-
-<p>
   <strong>Wetweight:</strong>
   <%= @composter_update.wetWeight %>
 </p>
@@ -21,8 +11,13 @@
 </p>
 
 <p>
-  <strong>Cnratio:</strong>
-  <%= @composter_update.cNRatio %>
+  <strong>Cnration:</strong>
+  <%= @composter_update.cNRation %>
+</p>
+
+<p>
+  <strong>Composter:</strong>
+  <%= @composter_update.Composter %>
 </p>
 
 <%= link_to 'Edit', edit_composter_update_path(@composter_update) %> |

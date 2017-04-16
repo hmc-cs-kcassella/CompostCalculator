@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Iid</th>
-      <th>Cuid</th>
-      <th>Name</th>
+      <th>Wetweight</th>
+      <th>Dryweight</th>
+      <th>Composterupdate</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +15,9 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.iid %></td>
-        <td><%= item.cuid %></td>
-        <td><%= item.name %></td>
+        <td><%= item.wetWeight %></td>
+        <td><%= item.dryWeight %></td>
+        <td><%= item.ComposterUpdate %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
