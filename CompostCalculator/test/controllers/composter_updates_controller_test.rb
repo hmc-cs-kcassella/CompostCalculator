@@ -17,7 +17,7 @@ class ComposterUpdatesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create composter_update" do
     assert_difference('ComposterUpdate.count') do
-      post composter_updates_url, params: { composter_update: { Composter_id: @composter_update.Composter_id, cNRation: @composter_update.cNRation, dryWeight: @composter_update.dryWeight, wetWeight: @composter_update.wetWeight } }
+      post composter_updates_url, params: { composter_update: { cNRatio: @composter_update.cNRatio, cid: @composter_update.cid, cuid: @composter_update.cuid, dryWeight: @composter_update.dryWeight, wetWeight: @composter_update.wetWeight } }
     end
 
     assert_redirected_to composter_update_url(ComposterUpdate.last)
@@ -34,7 +34,7 @@ class ComposterUpdatesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update composter_update" do
-    patch composter_update_url(@composter_update), params: { composter_update: { Composter_id: @composter_update.Composter_id, cNRation: @composter_update.cNRation, dryWeight: @composter_update.dryWeight, wetWeight: @composter_update.wetWeight } }
+    patch composter_update_url(@composter_update), params: { composter_update: { cNRatio: @composter_update.cNRatio, cid: @composter_update.cid, cuid: @composter_update.cuid, dryWeight: @composter_update.dryWeight, wetWeight: @composter_update.wetWeight } }
     assert_redirected_to composter_update_url(@composter_update)
   end
 

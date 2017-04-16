@@ -17,7 +17,7 @@ class CompostersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create composter" do
     assert_difference('Composter.count') do
-      post composters_url, params: { composter: { flipTime: @composter.flipTime, name: @composter.name, size: @composter.size, temperature: @composter.temperature } }
+      post composters_url, params: { composter: { cid: @composter.cid, flipTime: @composter.flipTime, name: @composter.name, temperature: @composter.temperature, uid: @composter.uid } }
     end
 
     assert_redirected_to composter_url(Composter.last)
@@ -34,7 +34,7 @@ class CompostersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update composter" do
-    patch composter_url(@composter), params: { composter: { flipTime: @composter.flipTime, name: @composter.name, size: @composter.size, temperature: @composter.temperature } }
+    patch composter_url(@composter), params: { composter: { cid: @composter.cid, flipTime: @composter.flipTime, name: @composter.name, temperature: @composter.temperature, uid: @composter.uid } }
     assert_redirected_to composter_url(@composter)
   end
 

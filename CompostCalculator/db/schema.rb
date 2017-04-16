@@ -10,27 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405052309) do
+ActiveRecord::Schema.define(version: 20170416052351) do
 
   create_table "composter_updates", force: :cascade do |t|
+    t.integer  "cuid"
+    t.integer  "cid"
     t.float    "wetWeight"
     t.float    "dryWeight"
-    t.float    "cNRation"
-    t.integer  "Composter_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["Composter_id"], name: "index_composter_updates_on_Composter_id"
+    t.float    "cNRatio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "composters", force: :cascade do |t|
+    t.integer  "cid"
+    t.integer  "uid"
     t.string   "name"
-    t.float    "size"
     t.float    "temperature"
     t.float    "flipTime"
-    t.integer  "User_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["User_id"], name: "index_composters_on_User_id"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_composters_on_user_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.integer  "iid"
+    t.integer  "cuid"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

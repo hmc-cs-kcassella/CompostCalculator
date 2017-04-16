@@ -1,0 +1,2 @@
+class ComposterUpdate < ApplicationRecord
+end

@@ -1,52 +1,74 @@
 class CompostersController < ApplicationController
+  before_action :set_composter, only: [:show, :edit, :update, :destroy]
 
-  def new
-    @composter = Composter.new
-  end
-
+  # GET /composters
+  # GET /composters.json
   def index
     @composters = Composter.all
   end
 
+  # GET /composters/1
+  # GET /composters/1.json
   def show
-    @composter = Composter.find(params[:id])
   end
 
-  def create
-    @composter = Composter.new(permit_composter)
-    if @composter.save
-      redirect_to composter_path(@composter)
-    else
-      flash[:error] = @composter.errors.full_messages
-      redirect_to new_composter_path
-    end
+  # GET /composters/new
+  def new
+    @composter = Composter.new
   end
 
+  # GET /composters/1/edit
   def edit
-    @composter = Composter.find(params[:id])
   end
 
-  def view
-    @composter = Composter.find(params[:id])
+  # POST /composters
+  # POST /composters.json
+  def create
+    @composter = Composter.new(composter_params)
+
+    respond_to do |format|
+      if @composter.save
+        format.html { redirect_to @composter, notice: 'Composter was successfully created.' }
+        format.json { render :show, status: :created, location: @composter }
+      else
+        format.html { render :new }
+        format.json { render json: @composter.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
-  def destroy
-    @composter = Composter.find(params[:id])
-    @composter.destroy
-    redirect_to root_path
-  end 
-
+  # PATCH/PUT /composters/1
+  # PATCH/PUT /composters/1.json
   def update
-     @composter = Composter.update(permit_composter_moisture)
-      redirect_to composter_path(@composter)
+    respond_to do |format|
+      if @composter.update(composter_params)
+        format.html { redirect_to @composter, notice: 'Composter was successfully updated.' }
+        format.json { render :show, status: :ok, location: @composter }
+      else
+        format.html { render :edit }
+        format.json { render json: @composter.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
-  private 
-    def permit_composter
-      params.require(:composter).permit(:name, :size)
+  # DELETE /composters/1
+  # DELETE /composters/1.json
+  def destroy
+    @composter.destroy
+    respond_to do |format|
+      format.html { redirect_to composters_url, notice: 'Composter was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_composter
+      @composter = Composter.find(params[:id])
     end
 
-    def permit_composter_moisture
-      params.require(:composter).permit(:wetWeight, :dryWeight)
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def composter_params
+      params.require(:composter).permit(:cid, :uid, :name, :temperature, :flipTime)
     end
 end
