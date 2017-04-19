@@ -1,3 +1,3 @@
 class Composter < ApplicationRecord
-    has_many :updates
+  has_many :ComposterUpdate
 end

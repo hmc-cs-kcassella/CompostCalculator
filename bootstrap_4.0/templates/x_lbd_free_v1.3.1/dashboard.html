@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
 	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Light Bootstrap Dashboard by Creative Tim</title>
+	<title>Compost Calculator</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -30,11 +30,15 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
+
 </head>
 <body>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
+    <div class="sidebar" data-color="green" data-image="assets/img/sidebar-3.jpg">
 
     <!--
 
@@ -45,8 +49,13 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                <a href="https://sites.google.com/site/muddsustainability/" class="simple-text">
+                    ESW/MOSS Compost Calculator
+                <%- if current_user %>
+				<%= link_to "Compost Calculator", root_url, class: "logo" %>
+				<% else %>
+				<%= link_to "Compost Calculator", new_user_session_path, class: "navbar-brand"%>
+				<% end %>
                 </a>
             </div>
 

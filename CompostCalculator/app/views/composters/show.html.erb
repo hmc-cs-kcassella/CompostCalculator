@@ -1,44 +1,93 @@
-<!DOCTYPE html>
-<body style="background-image: url(/assets/environment.jpg); background-repeat: repeat-0; background-size: cover" >
-  <div class="row" class="col-md-12" style="color: white; font-size: 400%; font-family: fantasy">
-    <br>
-    <b>
-      Composter Information
-    </b>
+<div class = "row">
+  <div class="col-md-12" style="color: white; font-size: 400%; font-family: fantasy">
+          Composter History
   </div>
-  <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6" name= "composterCol">
-      <div class="panel panel-default" style="background-color: #101010; width: 100%;"> 
-        <div class="panel-heading" style="background: #101010; color: gray; font-family: Helvetica, sans-serif" >Current Composter Information</div>
-          <div class="panel-body" style="text-align: left; color: gray; font: medium">
-            <div class="row">
-              <div class="col-md-7">
-                <%= "Name:" %>
-                <%= @composter.name %>
+</div>
+
+<div class = "row">
+
+  <div class="col-md-4">
+  <div class="panel panel-default" style="background: rgba(255,255,255,0.5); width: 100%; height: 100%"> 
+            <div class="panel-heading" style="background: rgba(255,255,255,0.5); color: black; font-family: Helvetica, sans-serif" >
+                  General Information
+            </div>
+            <div class="panel-body" style="text-align: left; color: black; font: medium">
+              <div class="row">
+              <div class="col-md-12">
+                <%= "Current Name:" %>
+                    <%= @composter.name %>
                 <br>
-                <%= "Composter Volume:" %>
-                <%= @composter.size %>
+                <%= "Current Temperature (celcius):" %>
+                <%= @composter.temperature %>
                 <br>
-                <%= "Current Temperature:" %>
-                <br>
-                <%= "Time until next flip:" %>
-                <br>
-                <%= "Carbon Nitrogen Ratio:" %>
+                <%= "Time until next flip (hours):" %>
+                <%= @composter.flipTime %>
                 <br>
                 <%= "Current Moisture Content:" %>
                 <br>
-                <br>
                 <button class="composterButton">
-                  <%= link_to "Edit Composter", edit_composter_path, style: "color: white" %>
-                </button>
+                <%= link_to "Edit Composter", edit_composter_path(@composter.id), style: "color: white; left: 12.5%; width: 75%" %>
+                </button> 
               </div>
-              <div class="col-md-5">
-                <br>
-                <img src=/assets/logocropped.png style="vertical-align: middle">
-              </div>
-            </div>            
-          </div>
-        </div>
-      </div>
+              </div>            
+            </div>
+            </div> 
+  </div>
 
+  <div class="col-md-4"> 
+
+<div class="panel panel-default" style="background: rgba(255,255,255,0.5); width: 100%; height: 100%;"> 
+            <div class="panel-heading" style="background: rgba(255,255,255,0.5); color: black; font-family: Helvetica, sans-serif" >
+                  Item History
+            </div>
+            <div class="panel-body" style="text-align: left; color: black; font: medium">
+              <div class="row">
+              <div class="col-md-12">
+                 <%- if @composter.items %>
+                    <%- @composter.items.each_char do |i| %>
+                      <%- if i == ')'%>
+                        <%= i %>
+                        <br>
+                      <% else %>
+                        <%= i %>
+                       <% end %> 
+                       <% end %> 
+                  <% else %>
+                    <br>
+                  <% end %> 
+              </div>
+              </div>            
+            </div>
+            </div> 
+           
+  </div>
+
+    <div class="col-md-4"> 
+
+<div class="panel panel-default" style="background: rgba(255,255,255,0.5); width: 100%; height: 100%;"> 
+            <div class="panel-heading" style="background: rgba(255,255,255,0.5); color: black; font-family: Helvetica, sans-serif" >
+                  Temperature Graph
+            </div>
+            <div class="panel-body" style="text-align: left; color: black; font: medium">
+              <div class="row">
+              <div class="col-md-12">
+                 <%- if @composter.temps %>
+                    <%- @composter.temps.each_char do |i| %>
+                      <%- if i == '|'%>
+                        <br>
+                      <% else %>
+                        <%= i %>
+                       <% end %> 
+                       <% end %> 
+                  <% else %>
+                    <br>
+                  <% end %> 
+
+              </div>
+              </div>            
+            </div>
+            </div> 
+           
+  </div>
+
+</div>

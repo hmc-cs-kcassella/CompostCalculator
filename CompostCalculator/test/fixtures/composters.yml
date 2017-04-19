@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyText
+  name: MyString
+  size: 1.5
+  temperature: 1.5
+  flipTime: 1.5
 
 two:
-  name: MyText
+  name: MyString
+  size: 1.5
+  temperature: 1.5
+  flipTime: 1.5

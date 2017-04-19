@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <body style="background-image: url(/assets/environment.jpg); background-repeat: 0; background-size: cover" >
 	<div class="row">
 		<<div class="col-md-12" style="color: white; font-size: 400%; font-family: fantasy">
@@ -124,36 +125,55 @@
 							<%= "Time until next flip:" %>
 							<br>
 							<%= "Carbon Nitrogen Ratio:" %>
+=======
+<body>
+	<div class = "index_container">
+		<div class="row">
+			<div class="col-md-12" style="color: white; font-size: 400%; font-family: fantasy">
+				Let's Start Composting!
+			</div>
+			<br>
+			<div class="col-md-12" style="left: 7.25%;">
+				<% @composters.each do |x| %>
+				<div class="panel panel-default" style="background: rgba(255,255,255,0.5); width: 30%;"> 
+        			<div class="panel-heading" style="background: rgba(255,255,255,0.5); color: black; font-family: Helvetica, sans-serif" >
+								<%- if x.name %>
+									<%= x.name %>
+								<% else %>
+									<br>
+								<% end %>
+					</div>
+					<div class="panel-body" style="text-align: left; color: black; font: medium">
+						<div class="row">
+						<div class="col-md-12">
+							<%= "Current Temperature (celcius):" %>
+							<%= x.temperature %>
+							<br>
+							<%= "Time until next flip (hours):" %>
+							<%= x.flipTime %>
+>>>>>>> 3fc5f33de3d9912f4f0bcbe8e57420435852ed2f
 							<br>
 							<%= "Current Moisture Content:" %>
-							<br>
 							<br>
 							<button class="composterButton">
 							<%= link_to "Edit Composter", edit_composter_path(x.id), style: "color: white; left: 12.5%; width: 75%" %>
 							</button>
 							<button type="button" class="composterButton" style: "color: white; left: 12.5%; width: 75%">
-								<%= link_to 'View', page_path('history') %>
-							</button>          
+								<%= link_to 'View', composter_path(x.id) %>
+							</button>  
 						</div>
-					</div>	
-				</div>
-			<% end %>
-		<% end %>   
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div><!-- /.carousel -->
-	<%- if current_user %>
-	<div style="width: 23%; margin: 1%; float: left; margin-top: 30px">
-		<a href="composters/new" class="btn btn-default">Add Composter</a>
-	</div>
-	<% end %>
+						</div>            
+					</div>
+					</div>  
+		<% end %>
+		<%- if current_user %>
+		<div style="width: 23%; margin: 1%; float: left; margin-top: 30px">
+			<a href="composters/new" class="btn btn-default">Add Composter</a>
+		</div>
+		<% end %>
 	</div>
 </div>
+<<<<<<< HEAD
 >>>>>>> e25d19a2ccdfd67e2dd4b86f6302c4ad4cecc544
+=======
+>>>>>>> 3fc5f33de3d9912f4f0bcbe8e57420435852ed2f

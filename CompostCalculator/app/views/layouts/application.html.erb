@@ -1,75 +1,202 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
 	<title>Compost Calculator</title>
-	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<!--
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+-->
+
+    <!-- Bootstrap core CSS     -->
+    <link type="text/css" href="../../assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+
+
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", media: "all", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
+
 </head>
-<body>
-	<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
+<body style="background-image: url(/assets/background.jpg); background-repeat: repeat-0; background-size: cover" >
+
+<div class="wrapper">
+    <div class="sidebar" data-color="blue" data-image="assets/images/sidebar-3.jpg">
+
+    <!--
+
+        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+        Tip 2: you can also add an image using data-image tag
+
+    -->
+    	<div class="sidebar-wrapper">
+            <div >
+                <img src=/assets/fullLogo.png style="vertical-align: middle">
+            </div>
+
+            <ul class="nav navbar-nav">
+                <%- if current_user %>
+                <li>
+                    <%= link_to 'About', page_path('about') %>
+                </li>
+                <br>
+                <li>
+                    <%= link_to "New Composter", new_composter_path %>
+                </li>
+                <br>
+                <li>
+                    <%= link_to "Logout", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"} %>
+                </li>
+
+                <% else %>
+                <li>
+                    <%= link_to 'About', page_path('about') %>
+                </li>
+                <br>
+                <li>
+                    <%= link_to "Login", new_user_session_path %>
+                </li>
+                <br>
+                <li>
+                    <%= link_to "Register", new_user_registration_path %>
+                </li>
+                <% end %>
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 				<%- if current_user %>
 				<%= link_to "Compost Calculator", root_url, class: "navbar-brand" %>
 				<% else %>
 				<%= link_to "Compost Calculator", new_user_session_path, class: "navbar-brand" %>
 				<% end %>
-	            </div>
-	            <!-- Collect the nav links, forms, and other content for toggling -->
-	            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	                <ul class="nav navbar-nav">
-	                    <li>
-	                        <%= link_to 'About', page_path('about') %>
-	                    </li>
-						<%- if current_user %>
-						<li>
-							<%= link_to "New Composter", new_composter_path %>
-	                    </li>
-           				 <!-- <li>
-              				<%= link_to 'Compost History', page_path('history') %>
-						</li> -->
-						<li>
-							<%= link_to "Logout", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"} %>
-						</li>
-
-						<% else %>
-						<li>
-							<%= link_to "Login", new_user_session_path %>
-						</li>
-						<li>
-							<%= link_to "Register", new_user_registration_path %>
-						</li>
-						<% end %>
-	                </ul>
-	            </div>
-	            <!-- /.navbar-collapse -->
-	        </div>
-	        <!-- /.container -->
-	    </nav>
+                </div>
+                
+            </div>
+        </nav>
 
 	<!-- Page Content -->
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<% flash.each do |a, b| %>
-				<div class="alert alert-success">
-					<% b%> </div>
-					<% end %>
-					<%= yield %>
-				</div>
-			</div>
-			<!-- /.row -->
-		</div>
+	<div class="container" style="width: 100%">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <% flash.each do |a, b| %>
+                    <div class="alert alert-success">
+                        <% b%> </div>
+                        <% end %>
+                        <%= yield %>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
 		<!-- /.container -->
-		<style>body{padding-top:70px;}</style>
+    
+        <footer class="footer" style="bottom: 0px; position: absolute; width: 100%; background:  rgba(255,255,255,0.5); ">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://sites.google.com/site/muddsustainability/">
+                                Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://sites.google.com/site/muddsustainability/news-and-events">
+                                Press
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://sites.google.com/site/muddsustainability/get-involved">
+                               Contact
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    &copy; 2017 
+					<a href="https://sites.google.com/site/muddsustainability/">
+					ESW/MOSS
+					</a>
+					, made with love for a better planet
+                </p>
+            </div>
+        </footer>
 	</body>
+    </div>
+</div>
+
+
+</body>
+
+    <!--   Core JS Files   -->
+    <script src="../../assets/javascripts/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="../../assets/javascripts/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="../../assets/javascripts/bootstrap-checkbox-radio-switch.js"></script>
+
+	<!--  Charts Plugin -->
+	<script src="../../assets/javascripts/chartist.min.js"></script>
+
+    <!--  Notifications Plugin    -->
+    <script src="../../assets/javascripts/bootstrap-notify.js"></script>
+
+    <!--  Google Maps Plugin    -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCX1LIHVZAQx4QCqic3Z1uz4dXJiBdZClU" type="text/javascript"></script>
+
+    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+	<script src="../../assets/javascripts/light-bootstrap-dashboard.js"></script>
+
+	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+	<%#<script src="../../assets/javascripts/demo.js"></script>%>
+
+	<script type="text/javascript">
+    	$(document).ready(function(){
+
+        	demo.initChartist();
+
+        	$.notify({
+            	icon: 'pe-7s-gift',
+            	message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
+
+            },{
+                type: 'info',
+                timer: 4000
+            });
+
+    	});
+	</script>
+
 	</html>

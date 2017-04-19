@@ -1,34 +1,104 @@
 <!DOCTYPE html>
-  <body style="background-image: url(/assets/environment.jpg); background-repeat: repeat-0; background-size: cover" >
+  <body >
     <div class="row">
-      <div class="col-md-12" style="color: white; font-size: 400%; font-family: fantasy">
-        <br>
+      <div class="col-md-12" style="color: white; font-size: 400%; font-family: Arial, Helvetica, sans-serif">
         <b>
           Edit Composter
         </b>
       </div>
     </div>
+
     <div class="row">
-    <div class="col-md-6" name= "composterCol">
-      <div class="panel panel-default" style="background-color: #101010 "> 
-        <div class="panel-heading" style="background: #101010; color: gray; font-family: Helvetica, sans-serif" >Current Composter Information</div>
-          <div class="panel-body" style="text-align: left; color: gray; font: medium">
+
+<div class="col-md-7">
+      <div class="panel panel-default" style="background: rgba(255,255,255,0.5); "> 
+        <div class="panel-heading" style="background: rgba(255,255,255,0.5);; color: black; font-family: Helvetica, sans-serif" >Edit Information</div>
+          <div class="panel-body" style="text-align: left; color: black; font: medium">
+            <div class="row">
+
+            <div class="row">
+              <%= form_for @composter do |f| %>
+               <div class="col-xs-4">
+                 <div>
+                    <%= f.label "Item (C:N Ratio): " %>
+                </div>
+                 <div>
+                    <%= f.label "Wet Weight (grams):" %>
+                 </div>
+                 <div>
+                   <%= f.label "Dry Weight (grams):" %>
+                 </div>
+               </div>
+
+               <div class="col-xs-4">
+                 <div>
+                   <%= f.select(:newestItem, ['Alfalfa (12:1)', 'Ashes (25:1)', 'Cardboard (350:1)', 'Clover (23:1)', 'Coffee (20:1)', 'Corn Stalks (75:1)',
+                      'Food Waste (20:1)', 'Fruit Waste (35:1)', 'Garden Waste (30:1)', 'Grass Clippings (20:1)', 'Hay (25:1)', 'Leaves (60:1)', 'Manures (15:1)', 
+                      'Newspapers (175:1)', 'Peanut Shells (35:1)', 'Pine Needles (80:1)', 'Seaweed (19:1)', 'Straw (75:1)', 'Vegetable Scraps (25:1)',
+                      'Weeds (30:1)', 'Wood Chips (400:1)'], {}, {:style => "width: 150px"}) %>
+                 </div>
+                 <div>
+                   <%= f.number_field :newestWetWeight, class: :text_field, step: :any%>
+                 </div>
+                 <div>
+                   <%= f.number_field :newestDryWeight, class: :text_field, step: :any%>
+                 </div>
+               </div>
+
+               <div class= "col-xs-4">
+                 <button class="composterButton" type="submit" data-disable-with="Add Item" style="width:150px;height: 75px; background: rgba(255,255,255,0.5); color:black">
+                 Add Item
+                </button>
+                <% end %>
+               </div>
+            </div>
+            <div class="row">
+              <br>
+            </div>
+
+            <div class="row">
+             <%= form_for @composter do |f| %>
+             <div class="col-xs-4">
+                 <div>
+                   <%= f.label "Temp (Fahrenheit):" %>
+                 </div>
+             </div>
+             <div class="col-xs-4">
+                <div>
+                   <%= f.number_field :newestTemp, class: :text_field, step: :any%>
+                 </div>
+             </div>
+             <div class="col-xs-4">
+             <button class="composterButton" type="submit" data-disable-with="Save Changes" style="width:150px; background: rgba(255,255,255,0.5); color:black">
+                 Update Temperature
+               </button>
+             </div>
+              <% end %>
+            </div>
+
+            <div class="row">
+              <br>
+            </div>
+
+            </div>            
+          </div>
+        </div>
+    </div>
+
+    <div class="col-md-5" name= "composterCol">
+      <div class="panel panel-default" style="background: rgba(255,255,255,0.5); "> 
+        <div class="panel-heading" style="background: rgba(255,255,255,0.5);; color: black; font-family: Helvetica, sans-serif" >Current Composter Information</div>
+          <div class="panel-body" style="text-align: left; color: black; font: medium">
             <div class="row">
               <div class="col-md-7">
                 <%= "Name:" %>
                 <%= @composter.name %>
-                <br>
-                <%= "Composter Volume (square meters):" %>
-                <%= @composter.size %>
                 <br>
                 <%= "Current Temperature (celcius):" %>
                 <%= @composter.temperature %>
                 <br>
                 <%= "Time until next flip (hours):" %>
                 <%= @composter.flipTime %>
-                <br>
-                <%= "Carbon Nitrogen Ratio:" %>
-                <%= @composter.cNRatio %>
                 <br>
                 <%= "Current Moisture Content:" %>
                 <br>
@@ -37,20 +107,32 @@
                 <br>
                 <img src=/assets/logocropped.png style="vertical-align: middle">
               </div>
-            </div>            
+            </div> 
+
+                 <div class="row">
+             <%= form_for @composter do |f| %>
+              <%= f.hidden_field :items, :value => (@composter.items + @composter.newestItem) %>
+              <%= f.hidden_field :wetWeights, :value => (@composter.wetWeights + "|" + @composter.newestWetWeight) %>
+              <%= f.hidden_field :dryWeights, :value => (@composter.dryWeights + "|" + @composter.newestDryWeight) %>
+              <%= f.hidden_field :temps, :value => (@composter.temps + "|" + @composter.newestTemp) %>
+              <%= f.hidden_field :newestTemp, :value => " "%>
+              <%= f.hidden_field :newestWetWeight, :value => " "%>
+              <%= f.hidden_field :newestDryWeight, :value => " "%>
+
+              <div class="col-xs-6">
+               <button class="composterButton" type="submit" data-disable-with="Save Changes" style="width:150px; background: rgba(255,255,255,0.5); color:black">
+                 Save Changes
+               </button>
+            </div>
+             <% end %>
+             <div class="col-xs-6">
+            <%= button_to("Delete Composter", @composter, :method => :delete, class: "composterButton", style: "width:150px; background: rgba(255,255,255,0.5); color:black") %>
+             </div>
+            </div>
+
           </div>
         </div>     
     </div>
-    <div class="col-md-6">
-        <button class="composterButton">
-         <%= link_to "Update Contents", new_update_path(@composter.id), style: "color: white" %>
-        </button>
-      <br>
-      <button type="button" class="composterButton"> Empty Composter</button>
-      <br>
-      <br>
-          <%= button_to("Delete", @composter, :method => :delete, class: "composterButton") %>
     </div>
-  </div>
+
   </body>
-  

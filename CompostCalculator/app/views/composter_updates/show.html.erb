@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Wetweight:</strong>
+  <%= @composter_update.wetWeight %>
+</p>
+
+<p>
+  <strong>Dryweight:</strong>
+  <%= @composter_update.dryWeight %>
+</p>
+
+<p>
+  <strong>Cnration:</strong>
+  <%= @composter_update.cNRation %>
+</p>
+
+<p>
+  <strong>Composter:</strong>
+  <%= @composter_update.Composter %>
+</p>
+
+<%= link_to 'Edit', edit_composter_update_path(@composter_update) %> |
+<%= link_to 'Back', composter_updates_path %>
