@@ -36,89 +36,89 @@
 	<%= csrf_meta_tags %>
 
 </head>
-<body style="background-image: url(/assets/background.jpg); background-repeat: repeat-0; background-size: cover" >
+<body style="background-image: url(/assets/tomato_compost.jpg); background-repeat: repeat-0; background-size: cover;" >
 
-<div class="wrapper">
-    <div class="sidebar" data-color="blue" data-image="assets/images/sidebar-3.jpg">
+    <div class="wrapper">
+        <div class="sidebar" data-color="blue" data-image="assets/images/sidebar-3.jpg">
 
-    <!--
+        <!--
 
-        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
-        Tip 2: you can also add an image using data-image tag
+            Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+            Tip 2: you can also add an image using data-image tag
 
-    -->
-    	<div class="sidebar-wrapper">
-            <div >
-                <img src=/assets/fullLogo.png style="vertical-align: middle">
-            </div>
-
-            <ul class="nav navbar-nav">
-                <%- if current_user %>
-                <li>
-                    <%= link_to 'About', page_path('about') %>
-                </li>
-                <br>
-                <li>
-                    <%= link_to "New Composter", new_composter_path %>
-                </li>
-                <br>
-                <li>
-                    <%= link_to "Logout", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"} %>
-                </li>
-
-                <% else %>
-                <li>
-                    <%= link_to 'About', page_path('about') %>
-                </li>
-                <br>
-                <li>
-                    <%= link_to "Login", new_user_session_path %>
-                </li>
-                <br>
-                <li>
-                    <%= link_to "Register", new_user_registration_path %>
-                </li>
-                <% end %>
-            </ul>
-    	</div>
-    </div>
-
-    <div class="main-panel">
-        <nav class="navbar navbar-default navbar-fixed">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-				<%- if current_user %>
-				<%= link_to "Compost Calculator", root_url, class: "navbar-brand" %>
-				<% else %>
-				<%= link_to "Compost Calculator", new_user_session_path, class: "navbar-brand" %>
-				<% end %>
+        -->
+            <div class="sidebar-wrapper">
+                <div >
+                    <img src=/assets/fullLogo.png style="vertical-align: middle">
                 </div>
-                
-            </div>
-        </nav>
 
-	<!-- Page Content -->
-	<div class="container" style="width: 100%">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <% flash.each do |a, b| %>
-                    <div class="alert alert-success">
-                        <% b%> </div>
-                        <% end %>
-                        <%= yield %>
+                <ul class="nav navbar-nav">
+                    <%- if current_user %>
+                    <li>
+                        <%= link_to 'About', page_path('about') %>
+                    </li>
+                    <br>
+                    <li>
+                        <%= link_to "New Composter", new_composter_path %>
+                    </li>
+                    <br>
+                    <li>
+                        <%= link_to "Logout", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"} %>
+                    </li>
+
+                    <% else %>
+                    <li>
+                        <%= link_to 'About', page_path('about') %>
+                    </li>
+                    <br>
+                    <li>
+                        <%= link_to "Login", new_user_session_path %>
+                    </li>
+                    <br>
+                    <li>
+                        <%= link_to "Register", new_user_registration_path %>
+                    </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <nav class="navbar navbar-default navbar-fixed">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    <%- if current_user %>
+                    <%= link_to "Compost Calculator", root_url, class: "navbar-brand" %>
+                    <% else %>
+                    <%= link_to "Compost Calculator", new_user_session_path, class: "navbar-brand" %>
+                    <% end %>
                     </div>
+                    
                 </div>
-                <!-- /.row -->
-            </div>
-		<!-- /.container -->
-    
-        <footer class="footer" style="bottom: 0px; position: absolute; width: 100%; background:  rgba(255,255,255,0.5); ">
+            </nav>
+
+        <!-- Page Content -->
+        <div class="container" style="width: 100%">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <% flash.each do |a, b| %>
+                        <div class="alert alert-success">
+                            <% b%> </div>
+                            <% end %>
+                            <%= yield %>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+            <!-- /.container -->
+        
+        <footer class="footer" style="bottom: 0px; position: absolute; width: 100%; background: rgba(255,255,255,0.5); ">
             <div class="container-fluid">
                 <nav class="pull-left">
                     <ul>
@@ -139,25 +139,22 @@
                         </li>
                         <li>
                             <a href="https://sites.google.com/site/muddsustainability/get-involved">
-                               Contact
+                            Contact
                             </a>
                         </li>
                     </ul>
                 </nav>
                 <p class="copyright pull-right">
                     &copy; 2017 
-					<a href="https://sites.google.com/site/muddsustainability/">
-					ESW/MOSS
-					</a>
-					, made with love for a better planet
+                    <a href="https://sites.google.com/site/muddsustainability/">
+                    ESW/MOSS
+                    </a>
+                    , made with love for a better planet
                 </p>
             </div>
         </footer>
-	</body>
+        </div>
     </div>
-</div>
-
-
 </body>
 
     <!--   Core JS Files   -->
