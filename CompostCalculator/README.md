@@ -30,7 +30,7 @@ HTML web page that performs the basic functionality
 
 Architectural Model:
 
-![Architectural Model](images/Architecture_2.0.png?raw=true)
+![Architectural Model](../images/Architecture_2.0.png?raw=true)
 
 Functionality:
 
