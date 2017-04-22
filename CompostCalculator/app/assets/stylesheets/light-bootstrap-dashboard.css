@@ -2122,9 +2122,13 @@ fieldset[disabled] .form-control {
     background-color: transparent;
 }
 
+ .push {
+    height: 155px;
+ }
 .footer {
     background-color: #FFFFFF;
     line-height: 20px;
+    z-index: 9999;
 }
 
 .footer nav>ul {
@@ -3570,7 +3574,7 @@ fieldset[disabled] .form-control {
         width: 100%;
     }
     body>.navbar-collapse .nav>li>a {
-        padding: 30px 25px;
+        padding: 300px 25px;
     }
     body>.navbar-collapse::before {
         top: 0;
