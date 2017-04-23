@@ -8,8 +8,8 @@
 			<br>
 			<div class="col-md-12" style="left: 7.25%;">
 				<% @composters.each do |x| %>
-				<div class="panel panel-default" style="background: rgba(255,255,255,0.5); width: 30%;"> 
-					<div class="panel-heading" style="background: rgba(255,255,255,0.5); color: black; font-family: Helvetica, sans-serif" >
+				<div class="panel panel-default" style="background: rgba(255,255,255,0.75); width: 30%;"> 
+					<div class="panel-heading" style="background: rgba(255,255,255); color: black; font-family: Helvetica, sans-serif" >
 						<%- if x.name %>
 						<%= x.name %>
 						<% else %>
@@ -27,12 +27,14 @@
 								<br>
 								<%= "Current Moisture Content:" %>
 								<br>
-								<button class="composterButton">
-									<%= link_to "Edit Composter", edit_composter_path(x.id), style: "color: white; left: 12.5%; width: 75%" %>
-								</button>
-								<button type="button" class="composterButton" style: "color: white; left: 12.5%; width: 75%">
-									<%= link_to 'View', composter_path(x.id) %>
-								</button>  
+								<ul class="nav navbar-nav">
+					                <li style="background: rgba(0,0,0,0.25);">
+										<%= link_to "Edit Composter", edit_composter_path(x.id) %>
+									</li>
+									<li style="background: rgba(0,0,0,0.25);">
+										<%= link_to 'View', composter_path(x.id) %>
+									</li>
+								</ul>
 							</div>
 						</div>            
 					</div>
