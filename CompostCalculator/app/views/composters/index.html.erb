@@ -9,39 +9,52 @@
 			<div class="col-md-12" style="left: 7.25%;">
 				<% @composters.each do |x| %>
 				<div class="panel panel-default" style="background: rgba(255,255,255,0.5); width: 30%;"> 
-        			<div class="panel-heading" style="background: rgba(255,255,255,0.5); color: black; font-family: Helvetica, sans-serif" >
-								<%- if x.name %>
-									<%= x.name %>
-								<% else %>
-									<br>
-								<% end %>
+					<div class="panel-heading" style="background: rgba(255,255,255,0.5); color: black; font-family: Helvetica, sans-serif" >
+						<%- if x.name %>
+						<%= x.name %>
+						<% else %>
+						<br>
+						<% end %>
 					</div>
 					<div class="panel-body" style="text-align: left; color: black; font: medium">
 						<div class="row">
-						<div class="col-md-12">
-							<%= "Current Temperature (celcius):" %>
-							<%= x.temperature %>
-							<br>
-							<%= "Time until next flip (hours):" %>
-							<%= x.flipTime %>
-							<br>
-							<%= "Current Moisture Content:" %>
-							<br>
-							<button class="composterButton">
-							<%= link_to "Edit Composter", edit_composter_path(x.id), style: "color: white; left: 12.5%; width: 75%" %>
-							</button>
-							<button type="button" class="composterButton" style: "color: white; left: 12.5%; width: 75%">
-								<%= link_to 'View', composter_path(x.id) %>
-							</button>  
-						</div>
+							<div class="col-md-12">
+								<%= "Current Temperature (celcius):" %>
+								<%= x.temperature %>
+								<br>
+								<%= "Time until next flip (hours):" %>
+								<%= x.flipTime %>
+								<br>
+								<%= "Current Moisture Content:" %>
+								<br>
+								<button class="composterButton">
+									<%= link_to "Edit Composter", edit_composter_path(x.id), style: "color: white; left: 12.5%; width: 75%" %>
+								</button>
+								<button type="button" class="composterButton" style: "color: white; left: 12.5%; width: 75%">
+									<%= link_to 'View', composter_path(x.id) %>
+								</button>  
+							</div>
 						</div>            
 					</div>
-					</div>  
-		<% end %>
-		<%- if current_user %>
-		<div style="width: 23%; margin: 1%; float: left; margin-top: 30px">
-			<a href="composters/new" class="btn btn-default">Add Composter</a>
+				</div>  
+				<% end %>
+				<%- if current_user %>
+				<div style="width: 23%; margin: 1%; float: left; margin-top: 30px">
+					<a href="composters/new" class="btn btn-default">Add Composter</a>
+				</div>
+				<% end %>
+			</div>
 		</div>
-		<% end %>
 	</div>
-</div>
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
