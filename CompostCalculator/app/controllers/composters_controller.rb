@@ -17,6 +17,10 @@ class CompostersController < ApplicationController
 
       @composter.wetWeights = "|"
       @composter.dryWeights = "|"
+      @composter.wets = 0
+      @composter.drys = 0
+      @composter.newWet = 0
+      @composter.newDry = 0
       @composter.temps = "|"
       @composter.items = " "
       @composter.newestWetWeight = " "
@@ -52,11 +56,11 @@ class CompostersController < ApplicationController
 
   private 
     def permit_composter
-      params.require(:composter).permit(:name, :wetWeights, :dryWeights)
+      params.require(:composter).permit(:name)
     end
 
     def permit_composter_update
-      params.require(:composter).permit(:newestWetWeight, :newestDryWeight, :newestItem, :items, :newestTemp, :temps, :wetWeights, :dryWeights)
+      params.require(:composter).permit(:newDry, :newWet, :newestItem, :items, :newestTemp, :temps, :wets, :drys)
     end
 
     def permit_finish_update

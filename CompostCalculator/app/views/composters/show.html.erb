@@ -1,5 +1,5 @@
 <div class = "row">
-  <div class="col-md-12" style="color: white; font-size: 400%; font-family: fantasy">
+  <div class="col-md-12" style="color: white; font-size: 400%; font-family: Bebas Neue">
           Composter History
   </div>
 </div>
@@ -24,10 +24,17 @@
                 <%= @composter.flipTime %>
                 <br>
                 <%= "Current Moisture Content:" %>
+
+               <%- if (@composter.wets != 0) %>
+                   						 <%= (((@composter.wets-@composter.drys)/@composter.wets) * 100) %>
+                				<% end %>
+
                 <br>
-                <button class="composterButton">
-                <%= link_to "Edit Composter", edit_composter_path(@composter.id), style: "color: white; left: 12.5%; width: 75%" %>
-                </button> 
+                <ul class="nav navbar-nav">
+                <li style="background: white;">
+										<%= link_to "Edit Composter", edit_composter_path(@composter.id) %>
+								</li>
+                </ul>
               </div>
               </div>            
             </div>
