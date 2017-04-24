@@ -103,7 +103,7 @@
                 <%= "Current Moisture Content:" %>
                  <%- if @composter.wets != 0 %>
                   <%- if @composter.drys != 0 %>
-                    <%= (((@composter.wets-@composter.drys)/@composter.wets) * 100) %>
+                    <%= (((@composter.wets-@composter.drys)/@composter.wets) * 100)%> %
                   <% end %>
                 <% end %>
                 <br>
