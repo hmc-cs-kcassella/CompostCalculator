@@ -6,7 +6,7 @@ The Compost Calculator takes the very meticulous process of composting and makes
 
 ## Installation
 
-  ###Prerequisites
+  ### Prerequisites
 
   Download and install: 
   
