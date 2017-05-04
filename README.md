@@ -23,6 +23,7 @@ The Compost Calculator takes the very meticulous process of composting and makes
   To set up the app on your local server, navigate to the directory named `Compost Calculator` and run:
 
   `rails bundle install`
+  
   `rails db:migrate`
 
   To start the server, navigate to the directory named `app` and run:
@@ -78,49 +79,49 @@ Enter the Composting Calculator. Composting has clear benefits like reducing was
 ## Credits
 
   ### Authors
-    - Elise Cassella
-    - Juan Zamudio
-    - Drew Summy
-    - Errol Francis
+  - Elise Cassella
+  - Juan Zamudio
+  - Drew Summy
+  - Errol Francis
   
   ### Client
   ESW/MOSS at Harvey Mudd College
 
   ### Advisors
-    - Professor Yekaterina Kharitonova from Harvey Mudd College
-    - Marina Kent (Teaching Assistant) from Harvey Mudd College
+  - Professor Yekaterina Kharitonova from Harvey Mudd College
+  - Marina Kent (Teaching Assistant) from Harvey Mudd College
 
   ### Resources
-    - Information on Composting Science
-      
-      http://compost.css.cornell.edu
+  - Information on Composting Science
+    
+    http://compost.css.cornell.edu
 
-    - Ruby on Rails
-      
-      http://railsinstaller.org/
-      https://rubyinstaller.org/
+  - Ruby on Rails
+    
+    http://railsinstaller.org/
+    https://rubyinstaller.org/
 
-    - How to Build Instagram Tutorial
+  - How to Build Instagram Tutorial
 
-      https://www.youtube.com/watch?v=MpFO4Zr0EPE&
+    https://www.youtube.com/watch?v=MpFO4Zr0EPE&
 
-    - Active Record Association Documentation
-      
-      http://guides.rubyonrails.org/association_basics.html#choosing-between-belongs-to-and-has-one
+  - Active Record Association Documentation
+    
+    http://guides.rubyonrails.org/association_basics.html#choosing-between-belongs-to-and-has-one
 
-    - SQLlite Usage and Documentation
+  - SQLlite Usage and Documentation
 
-      https://www.sqlite.org/
+    https://www.sqlite.org/
 
-    - Bootstrap and Creative Tim Theme
-      
-      https://github.com/twbs/bootstrap
+  - Bootstrap and Creative Tim Theme
+    
+    https://github.com/twbs/bootstrap
 
-      https://github.com/creativetimofficial
+    https://github.com/creativetimofficial
 
-    - Devise Gem
+  - Devise Gem
 
-      https://github.com/plataformatec/devise
+    https://github.com/plataformatec/devise
 
 ## License
 
