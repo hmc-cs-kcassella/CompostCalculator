@@ -14,24 +14,26 @@ The Compost Calculator takes the very meticulous process of composting and makes
   - Rails
   - Git
 
-Run on preferred directory:
+  ### Downloading and Running
 
-`git clone https://github.com/hmc-cs-kcassella/CompostCalculator.git`
+  Run on preferred directory:
 
-To set up the app on your local server, navigate to the directory named `Compost Calculator` and run:
+  `git clone https://github.com/hmc-cs-kcassella/CompostCalculator.git`
 
-`rails bundle install`
-`rails db:migrate`
+  To set up the app on your local server, navigate to the directory named `Compost Calculator` and run:
 
-To start the server, navigate to the directory named `app` and run:
+  `rails bundle install`
+  `rails db:migrate`
 
-`rails s`
+  To start the server, navigate to the directory named `app` and run:
 
-or
+  `rails s`
 
-`rails start`
+  or
 
-You should be able to use the web application now on your local server. Enjoy!
+  `rails start`
+
+  You should be able to use the web application now on your local server. Enjoy!
 
 ## Usage
 
@@ -75,46 +77,50 @@ Enter the Composting Calculator. Composting has clear benefits like reducing was
 
 ## Credits
 
-- Elise Cassella
-
-- Juan Zamudio
-
-- Drew Summy
-
-- Errol Francis
-
-- ESW/MOSS at Harvey Mudd College
-
-- Information on Composting Science
+  ### Authors
+    - Elise Cassella
+    - Juan Zamudio
+    - Drew Summy
+    - Errol Francis
   
-  http://compost.css.cornell.edu
+  ### Client
+  ESW/MOSS at Harvey Mudd College
 
-- Ruby on Rails
-  
-  http://railsinstaller.org/
-  https://rubyinstaller.org/
+  ### Advisors
+    - Professor Yekaterina Kharitonova from Harvey Mudd College
+    - Marina Kent (Teaching Assistant) from Harvey Mudd College
 
-- How to Build Instagram Tutorial
+  ### Resources
+    - Information on Composting Science
+      
+      http://compost.css.cornell.edu
 
-  https://www.youtube.com/watch?v=MpFO4Zr0EPE&
+    - Ruby on Rails
+      
+      http://railsinstaller.org/
+      https://rubyinstaller.org/
 
-- Active Record Association Documentation
-  
-  http://guides.rubyonrails.org/association_basics.html#choosing-between-belongs-to-and-has-one
+    - How to Build Instagram Tutorial
 
-- SQLlite Usage and Documentation
+      https://www.youtube.com/watch?v=MpFO4Zr0EPE&
 
-  https://www.sqlite.org/
+    - Active Record Association Documentation
+      
+      http://guides.rubyonrails.org/association_basics.html#choosing-between-belongs-to-and-has-one
 
-- Bootstrap and Creative Tim Theme
-  
-  https://github.com/twbs/bootstrap
+    - SQLlite Usage and Documentation
 
-  https://github.com/creativetimofficial
+      https://www.sqlite.org/
 
-- Devise Gem
+    - Bootstrap and Creative Tim Theme
+      
+      https://github.com/twbs/bootstrap
 
-  https://github.com/plataformatec/devise
+      https://github.com/creativetimofficial
+
+    - Devise Gem
+
+      https://github.com/plataformatec/devise
 
 ## License
 
