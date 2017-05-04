@@ -1,3 +1,50 @@
+<snippet>
+  <content><![CDATA[
+# ${1:Compost Calculator}
+
+For compost to process material efficiently and without odor, it must have an optimal carbon to nitrogen ratio, stay within a certain temperature range, and fall within a moinsture content range as well. To assist a composter (someone who composts?) in obeying these ranges, this application creates a virtual compost and informs the user if his/her actions will lead to an efficient compost.
+
+## Installation
+
+TODO: Describe the installation process
+
+## Usage
+
+TODO: Write usage instructions
+
+## Contributing
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
+
+## History
+
+TODO: Write history
+
+## Credits
+
+Client: ESW/MOSS
+Team: Elise Casella, Errol Francis II, Drew Summy, Juan Zamudio
+
+## License
+
+See LICENSE.txt
+is this good?
+
+]]></content>
+  <tabTrigger>readme</tabTrigger>
+</snippet>
+
+
+
+
+
+
+<!-- 
+############# OLD ####################
 # Compost Calculator Web Application
 
 Client: ESW/MOSS
@@ -58,3 +105,4 @@ Potential problems:
 
 Composters/users might not give enough information to create a graph
 We don’t have the equation to calculate the ratios (waiting to get this from Zach)
+ -->
