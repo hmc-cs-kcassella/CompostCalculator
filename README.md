@@ -1,6 +1,4 @@
-<snippet>
-  <content><![CDATA[
-# ${1:Compost Calculator}
+# Compost Calculator
 
 For compost to process material efficiently and without odor, it must have an optimal carbon to nitrogen ratio, stay within a certain temperature range, and fall within a specific moisture content range as well. To assist a person that wants to compost in obeying these ranges, the Compost Calculator creates a virtual compost and informs the user if their actions will lead to an efficient compost.
 
@@ -77,6 +75,16 @@ Enter the Composting Calculator. Composting has clear benefits like reducing was
 
 ## Credits
 
+- Elise Cassella
+
+- Juan Zamudio
+
+- Drew Summy
+
+- Errol Francis
+
+- ESW/MOSS at Harvey Mudd College
+
 - Information on Composting Science
   
   http://compost.css.cornell.edu
@@ -131,7 +139,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-]]></content>
-  <tabTrigger>readme</tabTrigger>
-</snippet>
