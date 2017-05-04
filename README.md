@@ -22,9 +22,9 @@ The Compost Calculator takes the very meticulous process of composting and makes
 
   To set up the app on your local server, navigate to the directory named `Compost Calculator` and run:
 
-    `rails bundle install`
-    
-    `rails db:migrate`
+  `rails bundle install`
+  
+  `rails db:migrate`
 
   To start the server, navigate to the directory named `app` and run:
 
