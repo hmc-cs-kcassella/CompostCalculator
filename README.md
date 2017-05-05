@@ -48,11 +48,15 @@ The Compost Calculator takes the very meticulous process of composting and makes
 
   ### Create New Composter
   
-  Create a new composter by naming it whatever you like, adding its temperature, and contents
+  Create a new composter by naming it whatever you like, adding its temperature, and contents. There is a known error where
+  there is no character limit when entering the name of the project.
 
   ### Edit Composter
 
-  Edit the contents of your composter when you add an item. This results in a change in carbon-nitrogen ratio.
+  Edit the contents of your composter when you add an item. This results in a change in carbon-nitrogen ratio. When you add an
+  item or update the wet and dry weights you need to click add item and then save the item before returning to the home page.
+  There is a known error where you need to add two items before anything shows up in your view page. There are also not limits
+  on the numbers that you insert for wet and dry weights.
 
   ### Delete Composter
 
@@ -60,7 +64,9 @@ The Compost Calculator takes the very meticulous process of composting and makes
 
   ### Logout
 
-  Logout whenever you're done adding items to your composter. Come back whenever and your information will be saved!
+  Logout whenever you're done adding items to your composter. Come back whenever and your information will be saved! There is
+  a known error where when you logout you are still able to view all the composters that have been created. This is because we
+  never set up a belongs_to association between the user and the composter. 
 
 ## Contributing
 
